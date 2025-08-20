@@ -176,37 +176,43 @@ All colors MUST be HSL.
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 1000px;
-    height: 1000px;
+    width: 1200px;
+    height: 1200px;
     background: conic-gradient(
       from 0deg at 50% 50%,
       transparent 0deg,
-      hsl(var(--sunset-gold) / 0.05) 20deg,
-      transparent 40deg,
-      hsl(var(--sunset-orange) / 0.03) 60deg,
-      transparent 80deg,
-      hsl(var(--sunset-coral) / 0.05) 100deg,
+      hsl(var(--sunset-gold) / 0.08) 15deg,
+      transparent 30deg,
+      hsl(var(--sunset-orange) / 0.06) 45deg,
+      transparent 60deg,
+      hsl(var(--sunset-coral) / 0.08) 75deg,
+      transparent 90deg,
+      hsl(var(--sunset-gold) / 0.07) 105deg,
       transparent 120deg,
-      hsl(var(--sunset-gold) / 0.04) 140deg,
-      transparent 160deg,
-      hsl(var(--sunset-orange) / 0.03) 180deg,
-      transparent 200deg,
-      hsl(var(--sunset-coral) / 0.05) 220deg,
+      hsl(var(--sunset-orange) / 0.06) 135deg,
+      transparent 150deg,
+      hsl(var(--sunset-coral) / 0.08) 165deg,
+      transparent 180deg,
+      hsl(var(--sunset-gold) / 0.07) 195deg,
+      transparent 210deg,
+      hsl(var(--sunset-orange) / 0.06) 225deg,
       transparent 240deg,
-      hsl(var(--sunset-gold) / 0.04) 260deg,
-      transparent 280deg,
-      hsl(var(--sunset-orange) / 0.03) 300deg,
-      transparent 320deg,
-      hsl(var(--sunset-coral) / 0.05) 340deg,
+      hsl(var(--sunset-coral) / 0.08) 255deg,
+      transparent 270deg,
+      hsl(var(--sunset-gold) / 0.07) 285deg,
+      transparent 300deg,
+      hsl(var(--sunset-orange) / 0.06) 315deg,
+      transparent 330deg,
+      hsl(var(--sunset-coral) / 0.08) 345deg,
       transparent 360deg
     );
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 1;
-    animation: rotate-sunbeams 60s linear infinite;
+    animation: rotate-sunbeams 120s linear infinite;
   }
 
-  /* Floating Clouds */
+  /* Enhanced Floating Clouds */
   .floating-clouds {
     position: fixed;
     inset: 0;
@@ -216,45 +222,110 @@ All colors MUST be HSL.
 
   .cloud {
     position: absolute;
-    background: var(--gradient-cloud);
     border-radius: 100px;
-    filter: blur(1px);
-    box-shadow: 0 8px 32px hsl(var(--cloud-cream) / 0.2);
+    filter: blur(0.5px);
+  }
+
+  .cloud::before {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+    background: hsl(var(--cloud-cream) / 0.9);
+    border-radius: 100px;
+    box-shadow: 
+      0 8px 32px hsl(var(--cloud-cream) / 0.3),
+      inset 0 2px 8px hsl(var(--cloud-beige) / 0.4);
+  }
+
+  .cloud::after {
+    content: '';
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    top: 10%;
+    left: 50%;
+    background: hsl(var(--cloud-beige) / 0.7);
+    border-radius: 100px;
+    box-shadow: 0 4px 16px hsl(var(--cloud-beige) / 0.3);
   }
 
   .cloud-1 {
-    width: 180px;
-    height: 80px;
-    top: 15%;
-    left: -200px;
-    animation: float-cloud-1 25s infinite linear;
+    width: 200px;
+    height: 90px;
+    top: 12%;
+    left: -220px;
+    background: linear-gradient(135deg, hsl(var(--cloud-cream) / 0.8), hsl(var(--cloud-beige) / 0.6));
+    box-shadow: 0 12px 40px hsl(var(--deep-teal) / 0.1);
+    animation: float-cloud-1 28s infinite linear;
   }
 
   .cloud-2 {
-    width: 140px;
-    height: 60px;
-    top: 30%;
+    width: 160px;
+    height: 70px;
+    top: 25%;
     left: -180px;
-    animation: float-cloud-2 30s infinite linear;
-    animation-delay: -10s;
+    background: linear-gradient(135deg, hsl(var(--cloud-beige) / 0.7), hsl(var(--cloud-cream) / 0.5));
+    box-shadow: 0 10px 35px hsl(var(--deep-teal) / 0.08);
+    animation: float-cloud-2 32s infinite linear;
+    animation-delay: -8s;
   }
 
   .cloud-3 {
-    width: 200px;
-    height: 90px;
-    top: 60%;
-    left: -220px;
-    animation: float-cloud-3 35s infinite linear;
-    animation-delay: -20s;
+    width: 240px;
+    height: 110px;
+    top: 55%;
+    left: -260px;
+    background: linear-gradient(135deg, hsl(var(--cloud-cream) / 0.85), hsl(var(--cloud-beige) / 0.65));
+    box-shadow: 0 15px 45px hsl(var(--deep-teal) / 0.12);
+    animation: float-cloud-3 38s infinite linear;
+    animation-delay: -15s;
   }
 
   .cloud-4 {
-    width: 120px;
-    height: 50px;
-    top: 80%;
-    left: -150px;
-    animation: float-cloud-4 28s infinite linear;
-    animation-delay: -5s;
+    width: 130px;
+    height: 55px;
+    top: 75%;
+    left: -140px;
+    background: linear-gradient(135deg, hsl(var(--cloud-beige) / 0.6), hsl(var(--cloud-cream) / 0.4));
+    box-shadow: 0 8px 30px hsl(var(--deep-teal) / 0.06);
+    animation: float-cloud-4 30s infinite linear;
+    animation-delay: -3s;
+  }
+
+  .cloud-5 {
+    width: 180px;
+    height: 80px;
+    top: 8%;
+    left: -200px;
+    background: linear-gradient(135deg, hsl(var(--cloud-cream) / 0.7), hsl(var(--cloud-beige) / 0.5));
+    box-shadow: 0 10px 35px hsl(var(--deep-teal) / 0.09);
+    animation: float-cloud-5 26s infinite linear;
+    animation-delay: -20s;
+  }
+
+  .cloud-6 {
+    width: 220px;
+    height: 95px;
+    top: 40%;
+    left: -240px;
+    background: linear-gradient(135deg, hsl(var(--cloud-beige) / 0.8), hsl(var(--cloud-cream) / 0.6));
+    box-shadow: 0 12px 38px hsl(var(--deep-teal) / 0.11);
+    animation: float-cloud-6 34s infinite linear;
+    animation-delay: -12s;
+  }
+
+  .cloud-7 {
+    width: 140px;
+    height: 60px;
+    top: 88%;
+    left: -160px;
+    background: linear-gradient(135deg, hsl(var(--cloud-cream) / 0.65), hsl(var(--cloud-beige) / 0.45));
+    box-shadow: 0 8px 28px hsl(var(--deep-teal) / 0.07);
+    animation: float-cloud-7 29s infinite linear;
+    animation-delay: -18s;
   }
 
   #root {
@@ -329,34 +400,84 @@ All colors MUST be HSL.
   }
 
   .chat-glass {
-    backdrop-filter: blur(25px) saturate(1.8);
-    -webkit-backdrop-filter: blur(25px) saturate(1.8);
-    background: hsl(var(--card) / 0.2);
-    border: 2px solid hsl(var(--border) / 0.4);
+    backdrop-filter: blur(30px) saturate(1.8);
+    -webkit-backdrop-filter: blur(30px) saturate(1.8);
+    background: linear-gradient(135deg, 
+      hsl(var(--card) / 0.12) 0%, 
+      hsl(var(--card) / 0.08) 100%);
+    border: 2px solid;
+    border-image: linear-gradient(135deg, 
+      hsl(var(--accent) / 0.3) 0%, 
+      hsl(var(--primary) / 0.2) 50%, 
+      hsl(var(--accent) / 0.3) 100%) 1;
     box-shadow: 
-      0 20px 60px hsl(var(--deep-teal) / 0.15),
-      inset 0 1px 0 hsl(var(--foreground) / 0.15),
-      0 0 0 1px hsl(var(--accent) / 0.1);
+      0 25px 80px hsl(var(--deep-teal) / 0.15),
+      inset 0 1px 0 hsl(var(--foreground) / 0.12),
+      0 0 0 1px hsl(var(--accent) / 0.08);
   }
 
   .cloud-border {
-    border-radius: 25px 25px 25px 8px;
+    border-radius: 30px 30px 30px 8px;
   }
 
   .cloud-bubble {
-    border-radius: 20px 20px 20px 5px;
+    border-radius: 25px 25px 25px 6px;
     box-shadow: 
-      0 4px 20px hsl(var(--deep-teal) / 0.1),
-      0 1px 3px hsl(var(--deep-teal) / 0.05);
+      0 6px 25px hsl(var(--deep-teal) / 0.08),
+      0 2px 8px hsl(var(--deep-teal) / 0.04),
+      inset 0 1px 0 hsl(var(--foreground) / 0.08);
+  }
+
+  .user-bubble-enhanced {
+    background: linear-gradient(135deg, 
+      hsl(var(--primary) / 0.95) 0%, 
+      hsl(var(--accent) / 0.9) 50%, 
+      hsl(var(--primary) / 0.95) 100%);
+    box-shadow: 
+      0 8px 30px hsl(var(--primary) / 0.25),
+      0 3px 12px hsl(var(--accent) / 0.15),
+      inset 0 1px 0 hsl(var(--primary-foreground) / 0.2);
+  }
+
+  .bot-bubble-enhanced {
+    background: linear-gradient(135deg, 
+      hsl(var(--bot-bubble) / 0.95) 0%, 
+      hsl(var(--card) / 0.9) 50%, 
+      hsl(var(--bot-bubble) / 0.95) 100%);
+    backdrop-filter: blur(15px);
+    box-shadow: 
+      0 8px 30px hsl(var(--deep-teal) / 0.1),
+      0 3px 12px hsl(var(--border) / 0.15),
+      inset 0 1px 0 hsl(var(--foreground) / 0.1);
   }
 
   .cloud-input {
-    border-radius: 30px;
-    background: hsl(var(--input) / 0.9);
-    border: 2px solid hsl(var(--border) / 0.5);
+    border-radius: 35px;
+    background: linear-gradient(135deg, 
+      hsl(var(--input) / 0.95) 0%, 
+      hsl(var(--card) / 0.9) 100%);
+    border: 2px solid hsl(var(--border) / 0.4);
     box-shadow: 
-      inset 0 2px 8px hsl(var(--deep-teal) / 0.05),
-      0 4px 20px hsl(var(--deep-teal) / 0.08);
+      inset 0 3px 12px hsl(var(--deep-teal) / 0.04),
+      0 6px 25px hsl(var(--deep-teal) / 0.06),
+      0 0 0 1px hsl(var(--accent) / 0.1);
+  }
+
+  .text-3d-enhanced {
+    text-shadow: 
+      3px 3px 0px hsl(var(--deep-teal) / 0.8),
+      6px 6px 0px hsl(var(--deep-teal) / 0.6),
+      9px 9px 0px hsl(var(--deep-teal) / 0.4),
+      12px 12px 20px hsl(var(--deep-teal) / 0.3),
+      0 0 40px hsl(var(--accent) / 0.6),
+      0 0 80px hsl(var(--primary) / 0.4);
+  }
+
+  .premium-glow {
+    box-shadow: 
+      0 0 30px hsl(var(--accent) / 0.3),
+      0 0 60px hsl(var(--primary) / 0.2),
+      inset 0 1px 0 hsl(var(--foreground) / 0.1);
   }
 }
 
@@ -402,10 +523,10 @@ All colors MUST be HSL.
 
 @keyframes float-cloud-1 {
   from {
-    transform: translateX(-200px) translateY(0px);
+    transform: translateX(-220px) translateY(0px);
   }
   to {
-    transform: translateX(calc(100vw + 200px)) translateY(-10px);
+    transform: translateX(calc(100vw + 220px)) translateY(-8px);
   }
 }
 
@@ -414,25 +535,52 @@ All colors MUST be HSL.
     transform: translateX(-180px) translateY(0px);
   }
   to {
-    transform: translateX(calc(100vw + 180px)) translateY(15px);
+    transform: translateX(calc(100vw + 180px)) translateY(12px);
   }
 }
 
 @keyframes float-cloud-3 {
   from {
-    transform: translateX(-220px) translateY(0px);
+    transform: translateX(-260px) translateY(0px);
   }
   to {
-    transform: translateX(calc(100vw + 220px)) translateY(-20px);
+    transform: translateX(calc(100vw + 260px)) translateY(-15px);
   }
 }
 
 @keyframes float-cloud-4 {
   from {
-    transform: translateX(-150px) translateY(0px);
+    transform: translateX(-140px) translateY(0px);
   }
   to {
-    transform: translateX(calc(100vw + 150px)) translateY(8px);
+    transform: translateX(calc(100vw + 140px)) translateY(6px);
+  }
+}
+
+@keyframes float-cloud-5 {
+  from {
+    transform: translateX(-200px) translateY(0px);
+  }
+  to {
+    transform: translateX(calc(100vw + 200px)) translateY(-10px);
+  }
+}
+
+@keyframes float-cloud-6 {
+  from {
+    transform: translateX(-240px) translateY(0px);
+  }
+  to {
+    transform: translateX(calc(100vw + 240px)) translateY(18px);
+  }
+}
+
+@keyframes float-cloud-7 {
+  from {
+    transform: translateX(-160px) translateY(0px);
+  }
+  to {
+    transform: translateX(calc(100vw + 160px)) translateY(4px);
   }
 }
 

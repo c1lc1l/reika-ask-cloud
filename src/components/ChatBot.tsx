@@ -106,21 +106,24 @@ const ChatBot = () => {
         <div className="cloud cloud-2"></div>
         <div className="cloud cloud-3"></div>
         <div className="cloud cloud-4"></div>
+        <div className="cloud cloud-5"></div>
+        <div className="cloud cloud-6"></div>
+        <div className="cloud cloud-7"></div>
       </div>
 
       {/* Compact Chat Container */}
       <div className="w-full max-w-4xl h-[70vh] flex flex-col chat-glass rounded-3xl overflow-hidden relative z-10">
         {/* Header */}
-        <header className="backdrop-blur-glass border-b border-border/30 px-6 py-6 flex-shrink-0">
+        <header className="backdrop-blur-glass border-b border-border/20 px-6 py-6 flex-shrink-0 premium-glow">
           <div className="text-center">
-            <div className="text-xs font-semibold text-accent tracking-wider uppercase mb-2">
-              AWS Cloud Club PCU Cavite
+            <div className="text-xs font-bold text-accent tracking-wider uppercase mb-3 animate-pulse">
+              ☁️ AWS Cloud Club PCU Cavite ☁️
             </div>
-            <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground text-3d mb-2">
+            <h1 className="text-4xl md:text-5xl font-display font-black text-foreground text-3d-enhanced mb-3 tracking-wide">
               CHAT WITH REIKA
             </h1>
-            <p className="text-sm text-muted-foreground font-medium">
-              Your AI Assistant • Always Day 1 Energy ☁️
+            <p className="text-sm text-muted-foreground font-semibold tracking-wide">
+              Your AI Assistant • Always Day 1 Energy ⚡
             </p>
           </div>
         </header>
@@ -145,8 +148,8 @@ const ChatBot = () => {
               <div
                 className={`message-bubble max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg px-5 py-4 cloud-bubble backdrop-filter backdrop-blur-sm ${
                   message.sender === 'user'
-                    ? 'bg-gradient-to-br from-primary/90 to-accent/85 text-primary-foreground border border-primary/30'
-                    : 'bg-bot-bubble text-bot-bubble-foreground border border-border/30'
+                    ? 'user-bubble-enhanced text-primary-foreground border border-primary/20'
+                    : 'bot-bubble-enhanced text-bot-bubble-foreground border border-border/20'
                 }`}
               >
                 <p className="text-sm leading-relaxed whitespace-pre-wrap font-medium">{message.text}</p>
@@ -174,7 +177,7 @@ const ChatBot = () => {
                   <Bot className="h-5 w-5" />
                 </AvatarFallback>
               </Avatar>
-              <div className="max-w-xs px-5 py-4 cloud-bubble bg-bot-bubble text-bot-bubble-foreground border border-border/30 backdrop-filter backdrop-blur-sm">
+              <div className="max-w-xs px-5 py-4 cloud-bubble bot-bubble-enhanced text-bot-bubble-foreground border border-border/20 backdrop-filter backdrop-blur-sm">
                 <div className="flex items-center gap-3">
                   <div className="flex gap-1">
                     <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
@@ -191,9 +194,10 @@ const ChatBot = () => {
         </div>
 
         {/* Input Area */}
-        <div className="backdrop-blur-glass border-t border-border/20 p-6 flex-shrink-0 relative">
-          {/* Cloud-like decorative border */}
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-40 h-2 bg-gradient-to-r from-transparent via-accent/40 to-transparent rounded-full blur-sm"></div>
+        <div className="backdrop-blur-glass border-t border-border/15 p-6 flex-shrink-0 relative premium-glow">
+          {/* Enhanced cloud-like decorative border */}
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-48 h-3 bg-gradient-to-r from-transparent via-accent/50 to-transparent rounded-full blur-sm opacity-80"></div>
+          <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-primary/60 to-transparent rounded-full blur-xs"></div>
           
           <div className="flex gap-4">
             <Input
@@ -202,13 +206,13 @@ const ChatBot = () => {
               onChange={(e) => setInputValue(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="Ask me about AWS Cloud Club PCU Cavite... ☁️"
-              className="flex-1 cloud-input text-foreground placeholder:text-muted-foreground font-medium px-6 py-4 text-sm focus:ring-2 focus:ring-accent/60 focus:border-accent/60 transition-all duration-300 hover:shadow-lg"
+              className="flex-1 cloud-input text-foreground placeholder:text-muted-foreground/70 font-medium px-6 py-4 text-sm focus:ring-2 focus:ring-accent/60 focus:border-accent/60 transition-all duration-300 hover:shadow-lg focus:shadow-xl"
               disabled={isLoading}
             />
             <Button
               onClick={handleSendMessage}
               disabled={!inputValue.trim() || isLoading}
-              className="px-6 py-4 cloud-border text-primary-foreground border-0 shadow-xl bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary transition-all duration-300 hover:scale-105 active:scale-95 font-bold hover:shadow-2xl"
+              className="px-6 py-4 cloud-border text-primary-foreground border-0 shadow-xl bg-gradient-to-r from-primary via-accent to-primary hover:from-accent hover:via-primary hover:to-accent transition-all duration-300 hover:scale-105 active:scale-95 font-bold hover:shadow-2xl premium-glow"
               size="sm"
             >
               <Send className="h-5 w-5" />
@@ -217,8 +221,8 @@ const ChatBot = () => {
           </div>
           
           <div className="text-center mt-4">
-            <p className="text-xs text-muted-foreground font-medium">
-              🌤️ Reika specializes in AWS Cloud Club PCU Cavite • Always Day 1 Spirit
+            <p className="text-xs text-muted-foreground/80 font-semibold tracking-wide">
+              ⚡ Reika specializes in AWS Cloud Club PCU Cavite • Always Day 1 Spirit ⚡
             </p>
           </div>
         </div>
