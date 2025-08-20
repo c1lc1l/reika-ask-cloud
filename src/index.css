@@ -8,63 +8,64 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Cloud-themed Brand Colors */
-    --sky-teal: 188 45% 52%;           /* Main sky color */
-    --sky-teal-light: 185 40% 65%;     /* Lighter sky */
-    --cloud-cream: 45 45% 88%;         /* Cloud cream */
-    --cloud-cream-dark: 40 35% 82%;    /* Darker cloud */
-    --sunset-coral: 15 85% 60%;        /* Coral text */
-    --sunset-orange: 25 85% 65%;       /* Orange accents */
-    --sunset-yellow: 45 90% 75%;       /* Yellow highlights */
-    --deep-teal: 185 35% 35%;          /* Dark teal */
+    /* Dramatic Sky Theme Colors */
+    --deep-teal: 188 65% 25%;          /* Deep ocean teal */
+    --sky-teal: 188 55% 35%;           /* Main sky color */
+    --sky-mid: 185 45% 45%;            /* Mid sky transition */
+    --sunset-coral: 15 85% 60%;        /* Vibrant coral */
+    --sunset-orange: 25 90% 65%;       /* Warm orange */
+    --sunset-gold: 45 95% 70%;         /* Golden highlights */
+    --cloud-cream: 45 35% 88%;         /* Soft cream clouds */
+    --cloud-beige: 40 25% 85%;         /* Beige cloud shadows */
 
     /* Design System */
-    --background: 185 40% 65%;         /* Sky background */
-    --foreground: 185 35% 25%;         /* Dark teal text */
+    --background: 188 65% 25%;         /* Deep teal background */
+    --foreground: 45 35% 92%;          /* Light cream text */
 
-    --card: 45 45% 94%;                /* Light cream */
-    --card-foreground: 185 35% 25%;
+    --card: 45 35% 88% / 0.1;          /* Semi-transparent cream */
+    --card-foreground: 188 45% 15%;
 
-    --popover: 45 45% 94%;
-    --popover-foreground: 185 35% 25%;
+    --popover: 45 35% 88%;
+    --popover-foreground: 188 45% 15%;
 
     --primary: 15 85% 60%;             /* Coral */
-    --primary-foreground: 45 45% 94%;
+    --primary-foreground: 45 35% 92%;
 
-    --secondary: 188 45% 52%;          /* Sky teal */
-    --secondary-foreground: 45 45% 94%;
+    --secondary: 188 55% 35%;          /* Sky teal */
+    --secondary-foreground: 45 35% 92%;
 
-    --muted: 45 30% 85%;               /* Muted cream */
-    --muted-foreground: 185 25% 45%;
+    --muted: 45 20% 80%;               /* Muted cream */
+    --muted-foreground: 188 35% 35%;
 
-    --accent: 25 85% 65%;              /* Orange */
-    --accent-foreground: 45 45% 94%;
+    --accent: 25 90% 65%;              /* Sunset orange */
+    --accent-foreground: 45 35% 92%;
 
-    --success: 45 90% 75%;             /* Yellow */
-    --success-foreground: 185 35% 25%;
+    --success: 45 95% 70%;             /* Golden yellow */
+    --success-foreground: 188 45% 15%;
 
-    --warning: 25 85% 65%;             /* Orange */
-    --warning-foreground: 185 35% 25%;
+    --warning: 25 90% 65%;
+    --warning-foreground: 188 45% 15%;
 
-    --destructive: 0 75% 55%;
-    --destructive-foreground: 45 45% 94%;
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 45 35% 92%;
 
-    --border: 45 25% 80%;
-    --input: 45 35% 90%;
+    --border: 45 25% 75% / 0.3;
+    --input: 45 35% 90% / 0.8;
     --ring: 15 85% 60%;
 
     /* Chat specific colors */
-    --chat-bg: 185 50% 70%;            /* Sky chat background */
+    --chat-bg: transparent;
     --user-bubble: 15 85% 60%;         /* Coral user bubble */
-    --user-bubble-foreground: 45 45% 94%;
-    --bot-bubble: 45 45% 94%;          /* Cream bot bubble */
-    --bot-bubble-foreground: 185 35% 25%;
+    --user-bubble-foreground: 45 35% 92%;
+    --bot-bubble: 45 35% 88% / 0.9;    /* Semi-transparent cream */
+    --bot-bubble-foreground: 188 45% 15%;
 
-    /* Cloud-themed gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(15 85% 60%), hsl(25 85% 65%));
-    --gradient-background: linear-gradient(180deg, hsl(185 40% 65%) 0%, hsl(45 60% 80%) 50%, hsl(25 70% 70%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(15 85% 60%), hsl(45 90% 75%));
-    --gradient-sky: linear-gradient(180deg, hsl(188 45% 52%) 0%, hsl(185 40% 65%) 100%);
+    /* Dramatic Sky Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(15 85% 60%), hsl(25 90% 65%));
+    --gradient-background: radial-gradient(ellipse at center bottom, hsl(45 95% 70%) 0%, hsl(25 90% 65%) 25%, hsl(15 85% 60%) 50%, hsl(188 55% 35%) 75%, hsl(188 65% 25%) 100%);
+    --gradient-sunbeam: conic-gradient(from 180deg at 50% 120%, transparent 0deg, hsl(45 95% 70% / 0.1) 60deg, hsl(25 90% 65% / 0.05) 120deg, transparent 180deg, hsl(15 85% 60% / 0.05) 240deg, hsl(45 95% 70% / 0.1) 300deg, transparent 360deg);
+    --gradient-accent: linear-gradient(135deg, hsl(15 85% 60%), hsl(45 95% 70%));
+    --gradient-cloud: linear-gradient(135deg, hsl(45 35% 88% / 0.8), hsl(40 25% 85% / 0.6));
 
     --radius: 0.75rem;
 
@@ -86,50 +87,51 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 185 25% 25%;         /* Dark teal background */
-    --foreground: 45 45% 94%;          /* Light cream text */
+    /* Enhanced dark mode for dramatic sky theme */
+    --deep-teal: 188 75% 15%;          /* Deeper night teal */
+    --background: 188 75% 15%;
+    --foreground: 45 35% 92%;
 
-    --card: 185 30% 20%;               /* Dark teal card */
-    --card-foreground: 45 45% 94%;
+    --card: 45 35% 88% / 0.05;         /* Very subtle cream overlay */
+    --card-foreground: 45 35% 92%;
 
-    --popover: 185 30% 20%;
-    --popover-foreground: 45 45% 94%;
+    --popover: 188 55% 20%;
+    --popover-foreground: 45 35% 92%;
 
-    --primary: 15 85% 60%;             /* Coral stays vibrant */
-    --primary-foreground: 45 45% 94%;
+    --primary: 15 85% 65%;             /* Brighter coral for contrast */
+    --primary-foreground: 45 35% 92%;
 
-    --secondary: 188 35% 40%;          /* Darker sky teal */
-    --secondary-foreground: 45 45% 94%;
+    --secondary: 188 45% 30%;
+    --secondary-foreground: 45 35% 92%;
 
-    --muted: 185 20% 30%;              /* Dark muted */
-    --muted-foreground: 45 35% 75%;
+    --muted: 188 35% 25%;
+    --muted-foreground: 45 25% 75%;
 
-    --accent: 25 80% 60%;              /* Slightly darker orange */
-    --accent-foreground: 45 45% 94%;
+    --accent: 25 90% 70%;              /* Brighter orange */
+    --accent-foreground: 45 35% 92%;
 
-    --success: 45 80% 65%;             /* Darker yellow */
-    --success-foreground: 185 25% 25%;
+    --success: 45 95% 75%;             /* Bright golden */
+    --success-foreground: 188 55% 15%;
 
-    --warning: 25 80% 60%;
-    --warning-foreground: 45 45% 94%;
+    --warning: 25 90% 70%;
+    --warning-foreground: 188 55% 15%;
 
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 45 45% 94%;
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 45 35% 92%;
 
-    --border: 185 20% 35%;
-    --input: 185 25% 30%;
-    --ring: 15 85% 60%;
+    --border: 45 25% 75% / 0.2;
+    --input: 45 35% 90% / 0.1;
+    --ring: 15 85% 65%;
 
-    --chat-bg: 185 25% 22%;            /* Dark sky background */
-    --user-bubble: 15 85% 60%;         /* Coral user bubble */
-    --user-bubble-foreground: 45 45% 94%;
-    --bot-bubble: 185 30% 20%;         /* Dark teal bot bubble */
-    --bot-bubble-foreground: 45 45% 94%;
+    --chat-bg: transparent;
+    --user-bubble: 15 85% 65%;
+    --user-bubble-foreground: 45 35% 92%;
+    --bot-bubble: 45 35% 88% / 0.1;
+    --bot-bubble-foreground: 45 35% 92%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(15 85% 60%), hsl(25 80% 60%));
-    --gradient-background: linear-gradient(180deg, hsl(185 25% 25%) 0%, hsl(185 30% 20%) 50%, hsl(185 35% 15%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(15 85% 60%), hsl(45 80% 65%));
-    --gradient-sky: linear-gradient(180deg, hsl(185 35% 30%) 0%, hsl(185 25% 25%) 100%);
+    --gradient-background: radial-gradient(ellipse at center bottom, hsl(45 95% 70% / 0.3) 0%, hsl(25 90% 65% / 0.2) 25%, hsl(15 85% 60% / 0.1) 50%, hsl(188 55% 25%) 75%, hsl(188 75% 15%) 100%);
+    --gradient-sunbeam: conic-gradient(from 180deg at 50% 120%, transparent 0deg, hsl(45 95% 70% / 0.05) 60deg, hsl(25 90% 65% / 0.03) 120deg, transparent 180deg, hsl(15 85% 60% / 0.03) 240deg, hsl(45 95% 70% / 0.05) 300deg, transparent 360deg);
+    --gradient-cloud: linear-gradient(135deg, hsl(45 35% 88% / 0.1), hsl(40 25% 85% / 0.05));
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -150,7 +152,41 @@ All colors MUST be HSL.
   body {
     @apply text-foreground font-sans antialiased;
     background: var(--gradient-background);
+    background-attachment: fixed;
     min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-sunbeam);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    top: 10%;
+    left: -10%;
+    width: 200px;
+    height: 100px;
+    background: var(--gradient-cloud);
+    border-radius: 50px;
+    pointer-events: none;
+    z-index: 1;
+    animation: float-cloud 20s infinite linear;
+  }
+
+  #root {
+    position: relative;
+    z-index: 2;
   }
 
   /* Chat animations */
@@ -192,6 +228,35 @@ All colors MUST be HSL.
   .font-sans {
     font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   }
+  
+  .font-display {
+    font-family: 'Fredoka', 'Open Sans', sans-serif;
+  }
+
+  .text-shadow-glow {
+    text-shadow: 0 0 20px hsl(var(--accent) / 0.5), 0 2px 4px hsl(var(--deep-teal) / 0.3);
+  }
+
+  .text-3d {
+    text-shadow: 
+      2px 2px 0px hsl(var(--deep-teal)),
+      4px 4px 0px hsl(var(--deep-teal) / 0.8),
+      6px 6px 0px hsl(var(--deep-teal) / 0.6),
+      0 0 30px hsl(var(--accent) / 0.4);
+  }
+
+  .backdrop-blur-glass {
+    backdrop-filter: blur(20px) saturate(1.5);
+    -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  }
+
+  .cloud-border {
+    border-radius: 30px 30px 30px 10px;
+    background: linear-gradient(135deg, 
+      hsl(var(--cloud-cream) / 0.1) 0%, 
+      hsl(var(--cloud-beige) / 0.05) 100%);
+    border: 1px solid hsl(var(--border));
+  }
 }
 
 @keyframes message-fade-in {
@@ -213,5 +278,32 @@ All colors MUST be HSL.
   to {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+@keyframes float-cloud {
+  from {
+    transform: translateX(-200px) translateY(0px);
+  }
+  25% {
+    transform: translateX(25vw) translateY(-20px);
+  }
+  50% {
+    transform: translateX(50vw) translateY(10px);
+  }
+  75% {
+    transform: translateX(75vw) translateY(-15px);
+  }
+  to {
+    transform: translateX(calc(100vw + 200px)) translateY(5px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 20px hsl(var(--accent) / 0.5), 0 2px 4px hsl(var(--deep-teal) / 0.3);
+  }
+  50% {
+    text-shadow: 0 0 30px hsl(var(--accent) / 0.8), 0 2px 4px hsl(var(--deep-teal) / 0.5);
   }
 }

@@ -20,6 +20,7 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: ['Open Sans', 'system-ui', 'sans-serif'],
+				display: ['Fredoka', 'Open Sans', 'system-ui', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
