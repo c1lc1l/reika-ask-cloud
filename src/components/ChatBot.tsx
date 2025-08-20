@@ -99,12 +99,12 @@ const ChatBot = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen max-w-4xl mx-auto bg-chat-bg">
+    <div className="flex flex-col h-screen max-w-4xl mx-auto">
       {/* Header */}
-      <header className="bg-card border-b border-border/50 px-6 py-4 shadow-sm">
+      <header className="bg-card/80 backdrop-blur-sm border-b border-border/50 px-6 py-4 shadow-lg">
         <div className="flex items-center gap-3">
           <Avatar className="h-10 w-10">
-            <AvatarFallback className="bg-gradient-to-br from-accent to-warning text-white font-semibold">
+            <AvatarFallback className="bg-gradient-to-br from-primary to-accent text-primary-foreground font-semibold">
               <Bot className="h-5 w-5" />
             </AvatarFallback>
           </Avatar>
@@ -116,7 +116,7 @@ const ChatBot = () => {
       </header>
 
       {/* Messages Container */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-chat-bg/20">
         {messages.map((message) => (
           <div
             key={message.id}
@@ -126,17 +126,17 @@ const ChatBot = () => {
           >
             {message.sender === 'bot' && (
               <Avatar className="h-8 w-8 flex-shrink-0">
-                <AvatarFallback className="bg-gradient-to-br from-accent to-warning text-white text-sm">
+                <AvatarFallback className="bg-gradient-to-br from-primary to-accent text-primary-foreground text-sm">
                   <Bot className="h-4 w-4" />
                 </AvatarFallback>
               </Avatar>
             )}
             
             <div
-              className={`message-bubble max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg px-4 py-3 rounded-2xl ${
+              className={`message-bubble max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg px-4 py-3 rounded-2xl shadow-lg border backdrop-blur-sm ${
                 message.sender === 'user'
-                  ? 'user-bubble rounded-br-md'
-                  : 'bot-bubble rounded-bl-md'
+                  ? 'user-bubble rounded-br-md border-primary/20'
+                  : 'bot-bubble rounded-bl-md border-border/50'
               }`}
             >
               <p className="text-sm leading-relaxed whitespace-pre-wrap">{message.text}</p>
@@ -160,11 +160,11 @@ const ChatBot = () => {
         {isLoading && (
           <div className="flex gap-3 justify-start message-enter">
             <Avatar className="h-8 w-8 flex-shrink-0">
-              <AvatarFallback className="bg-gradient-to-br from-accent to-warning text-white text-sm">
+              <AvatarFallback className="bg-gradient-to-br from-primary to-accent text-primary-foreground text-sm">
                 <Bot className="h-4 w-4" />
               </AvatarFallback>
             </Avatar>
-            <div className="bot-bubble max-w-xs px-4 py-3 rounded-2xl rounded-bl-md">
+            <div className="bot-bubble max-w-xs px-4 py-3 rounded-2xl rounded-bl-md shadow-lg border border-border/50 backdrop-blur-sm">
               <div className="flex items-center gap-2">
                 <div className="flex gap-1">
                   <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
@@ -181,7 +181,7 @@ const ChatBot = () => {
       </div>
 
       {/* Input Area */}
-      <div className="border-t border-border/50 bg-card p-4">
+      <div className="border-t border-border/30 bg-card/80 backdrop-blur-sm p-4 shadow-lg">
         <div className="flex gap-3 max-w-4xl mx-auto">
           <Input
             ref={inputRef}
@@ -189,13 +189,13 @@ const ChatBot = () => {
             onChange={(e) => setInputValue(e.target.value)}
             onKeyPress={handleKeyPress}
             placeholder="Ask me about AWS Cloud Club PCU Cavite..."
-            className="flex-1 chat-input rounded-xl border-border/50 bg-background/50 backdrop-blur-sm"
+            className="flex-1 chat-input rounded-xl border-border/50 bg-background/50 backdrop-blur-sm shadow-sm"
             disabled={isLoading}
           />
           <Button
             onClick={handleSendMessage}
             disabled={!inputValue.trim() || isLoading}
-            className="send-button px-4 py-2 rounded-xl text-white border-0"
+            className="send-button px-4 py-2 rounded-xl text-primary-foreground border-0 shadow-lg"
             size="sm"
           >
             <Send className="h-4 w-4" />
