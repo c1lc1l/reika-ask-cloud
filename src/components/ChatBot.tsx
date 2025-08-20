@@ -100,21 +100,18 @@ const ChatBot = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 relative">
-      {/* Floating Clouds */}
+      {/* Floating Clouds - Clean and Natural */}
       <div className="floating-clouds">
         <div className="cloud cloud-1"></div>
         <div className="cloud cloud-2"></div>
         <div className="cloud cloud-3"></div>
         <div className="cloud cloud-4"></div>
-        <div className="cloud cloud-5"></div>
-        <div className="cloud cloud-6"></div>
-        <div className="cloud cloud-7"></div>
       </div>
 
       {/* Compact Chat Container */}
       <div className="w-full max-w-4xl h-[70vh] flex flex-col chat-glass rounded-3xl overflow-hidden relative z-10">
         {/* Header */}
-        <header className="backdrop-blur-glass border-b border-border/20 px-6 py-6 flex-shrink-0 premium-glow">
+        <header className="backdrop-blur-glass border-b border-border/20 px-6 py-6 flex-shrink-0 premium-glow chat-header">
           <div className="text-center">
             <div className="text-xs font-bold text-accent tracking-wider uppercase mb-3 animate-pulse">
               ☁️ AWS Cloud Club PCU Cavite ☁️
@@ -194,7 +191,7 @@ const ChatBot = () => {
         </div>
 
         {/* Input Area */}
-        <div className="backdrop-blur-glass border-t border-border/15 p-6 flex-shrink-0 relative premium-glow">
+        <div className="backdrop-blur-glass border-t border-border/15 p-6 flex-shrink-0 relative premium-glow chat-input-area">
           {/* Enhanced cloud-like decorative border */}
           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-48 h-3 bg-gradient-to-r from-transparent via-accent/50 to-transparent rounded-full blur-sm opacity-80"></div>
           <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-primary/60 to-transparent rounded-full blur-xs"></div>

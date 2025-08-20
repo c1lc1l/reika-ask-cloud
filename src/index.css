@@ -212,7 +212,7 @@ All colors MUST be HSL.
     animation: rotate-sunbeams 120s linear infinite;
   }
 
-  /* Enhanced Floating Clouds */
+  /* Enhanced Floating Clouds - Natural and Clean */
   .floating-clouds {
     position: fixed;
     inset: 0;
@@ -222,110 +222,128 @@ All colors MUST be HSL.
 
   .cloud {
     position: absolute;
+    background: linear-gradient(135deg, 
+      hsl(var(--cloud-cream) / 0.8) 0%, 
+      hsl(var(--cloud-beige) / 0.6) 100%);
     border-radius: 100px;
     filter: blur(0.5px);
+    box-shadow: 0 8px 24px hsl(var(--cloud-cream) / 0.2);
   }
 
+  /* Create natural cloud shapes with pseudo-elements */
   .cloud::before {
     content: '';
     position: absolute;
-    width: 60%;
-    height: 60%;
-    top: 20%;
-    left: 20%;
-    background: hsl(var(--cloud-cream) / 0.9);
+    background: linear-gradient(135deg, 
+      hsl(var(--cloud-cream) / 0.9) 0%, 
+      hsl(var(--cloud-beige) / 0.7) 100%);
     border-radius: 100px;
-    box-shadow: 
-      0 8px 32px hsl(var(--cloud-cream) / 0.3),
-      inset 0 2px 8px hsl(var(--cloud-beige) / 0.4);
+    box-shadow: 0 4px 16px hsl(var(--cloud-cream) / 0.25);
   }
 
   .cloud::after {
     content: '';
     position: absolute;
-    width: 40%;
-    height: 40%;
-    top: 10%;
-    left: 50%;
-    background: hsl(var(--cloud-beige) / 0.7);
+    background: linear-gradient(135deg, 
+      hsl(var(--cloud-beige) / 0.8) 0%, 
+      hsl(var(--cloud-cream) / 0.6) 100%);
     border-radius: 100px;
-    box-shadow: 0 4px 16px hsl(var(--cloud-beige) / 0.3);
+    box-shadow: 0 3px 12px hsl(var(--cloud-beige) / 0.2);
   }
 
+  /* Cloud 1 - Top left, partially visible */
   .cloud-1 {
-    width: 200px;
-    height: 90px;
-    top: 12%;
-    left: -220px;
-    background: linear-gradient(135deg, hsl(var(--cloud-cream) / 0.8), hsl(var(--cloud-beige) / 0.6));
-    box-shadow: 0 12px 40px hsl(var(--deep-teal) / 0.1);
-    animation: float-cloud-1 28s infinite linear;
+    width: 220px;
+    height: 100px;
+    top: 8%;
+    left: -80px;
+    animation: float-cloud-1 35s infinite linear;
   }
 
-  .cloud-2 {
+  .cloud-1::before {
     width: 160px;
-    height: 70px;
-    top: 25%;
-    left: -180px;
-    background: linear-gradient(135deg, hsl(var(--cloud-beige) / 0.7), hsl(var(--cloud-cream) / 0.5));
-    box-shadow: 0 10px 35px hsl(var(--deep-teal) / 0.08);
-    animation: float-cloud-2 32s infinite linear;
-    animation-delay: -8s;
+    height: 80px;
+    top: 10px;
+    left: 40px;
   }
 
-  .cloud-3 {
-    width: 240px;
-    height: 110px;
-    top: 55%;
-    left: -260px;
-    background: linear-gradient(135deg, hsl(var(--cloud-cream) / 0.85), hsl(var(--cloud-beige) / 0.65));
-    box-shadow: 0 15px 45px hsl(var(--deep-teal) / 0.12);
-    animation: float-cloud-3 38s infinite linear;
+  .cloud-1::after {
+    width: 120px;
+    height: 60px;
+    top: 20px;
+    left: 80px;
+  }
+
+  /* Cloud 2 - Middle right, floating freely */
+  .cloud-2 {
+    width: 180px;
+    height: 85px;
+    top: 45%;
+    left: -200px;
+    animation: float-cloud-2 40s infinite linear;
     animation-delay: -15s;
   }
 
-  .cloud-4 {
-    width: 130px;
-    height: 55px;
-    top: 75%;
-    left: -140px;
-    background: linear-gradient(135deg, hsl(var(--cloud-beige) / 0.6), hsl(var(--cloud-cream) / 0.4));
-    box-shadow: 0 8px 30px hsl(var(--deep-teal) / 0.06);
-    animation: float-cloud-4 30s infinite linear;
-    animation-delay: -3s;
-  }
-
-  .cloud-5 {
-    width: 180px;
-    height: 80px;
-    top: 8%;
-    left: -200px;
-    background: linear-gradient(135deg, hsl(var(--cloud-cream) / 0.7), hsl(var(--cloud-beige) / 0.5));
-    box-shadow: 0 10px 35px hsl(var(--deep-teal) / 0.09);
-    animation: float-cloud-5 26s infinite linear;
-    animation-delay: -20s;
-  }
-
-  .cloud-6 {
-    width: 220px;
-    height: 95px;
-    top: 40%;
-    left: -240px;
-    background: linear-gradient(135deg, hsl(var(--cloud-beige) / 0.8), hsl(var(--cloud-cream) / 0.6));
-    box-shadow: 0 12px 38px hsl(var(--deep-teal) / 0.11);
-    animation: float-cloud-6 34s infinite linear;
-    animation-delay: -12s;
-  }
-
-  .cloud-7 {
+  .cloud-2::before {
     width: 140px;
+    height: 70px;
+    top: 8px;
+    left: 20px;
+  }
+
+  .cloud-2::after {
+    width: 100px;
+    height: 50px;
+    top: 15px;
+    left: 60px;
+  }
+
+  /* Cloud 3 - Bottom, partially visible */
+  .cloud-3 {
+    width: 200px;
+    height: 90px;
+    top: 78%;
+    left: -90px;
+    animation: float-cloud-3 38s infinite linear;
+    animation-delay: -25s;
+  }
+
+  .cloud-3::before {
+    width: 150px;
+    height: 75px;
+    top: 8px;
+    left: 30px;
+  }
+
+  .cloud-3::after {
+    width: 110px;
+    height: 55px;
+    top: 18px;
+    left: 70px;
+  }
+
+  /* Cloud 4 - Top center, floating freely */
+  .cloud-4 {
+    width: 160px;
+    height: 75px;
+    top: 25%;
+    left: -180px;
+    animation: float-cloud-4 42s infinite linear;
+    animation-delay: -8s;
+  }
+
+  .cloud-4::before {
+    width: 120px;
     height: 60px;
-    top: 88%;
-    left: -160px;
-    background: linear-gradient(135deg, hsl(var(--cloud-cream) / 0.65), hsl(var(--cloud-beige) / 0.45));
-    box-shadow: 0 8px 28px hsl(var(--deep-teal) / 0.07);
-    animation: float-cloud-7 29s infinite linear;
-    animation-delay: -18s;
+    top: 8px;
+    left: 20px;
+  }
+
+  .cloud-4::after {
+    width: 90px;
+    height: 45px;
+    top: 15px;
+    left: 50px;
   }
 
   #root {
@@ -410,10 +428,19 @@ All colors MUST be HSL.
       hsl(var(--accent) / 0.3) 0%, 
       hsl(var(--primary) / 0.2) 50%, 
       hsl(var(--accent) / 0.3) 100%) 1;
+    border-radius: 24px;
     box-shadow: 
       0 25px 80px hsl(var(--deep-teal) / 0.15),
       inset 0 1px 0 hsl(var(--foreground) / 0.12),
       0 0 0 1px hsl(var(--accent) / 0.08);
+  }
+
+  .chat-header {
+    border-radius: 24px 24px 0 0;
+  }
+
+  .chat-input-area {
+    border-radius: 0 0 24px 24px;
   }
 
   .cloud-border {
@@ -523,64 +550,37 @@ All colors MUST be HSL.
 
 @keyframes float-cloud-1 {
   from {
-    transform: translateX(-220px) translateY(0px);
+    transform: translateX(-80px) translateY(0px);
   }
   to {
-    transform: translateX(calc(100vw + 220px)) translateY(-8px);
+    transform: translateX(calc(100vw + 140px)) translateY(-5px);
   }
 }
 
 @keyframes float-cloud-2 {
   from {
-    transform: translateX(-180px) translateY(0px);
+    transform: translateX(-200px) translateY(0px);
   }
   to {
-    transform: translateX(calc(100vw + 180px)) translateY(12px);
+    transform: translateX(calc(100vw + 180px)) translateY(8px);
   }
 }
 
 @keyframes float-cloud-3 {
   from {
-    transform: translateX(-260px) translateY(0px);
+    transform: translateX(-90px) translateY(0px);
   }
   to {
-    transform: translateX(calc(100vw + 260px)) translateY(-15px);
+    transform: translateX(calc(100vw + 110px)) translateY(-3px);
   }
 }
 
 @keyframes float-cloud-4 {
   from {
-    transform: translateX(-140px) translateY(0px);
+    transform: translateX(-180px) translateY(0px);
   }
   to {
-    transform: translateX(calc(100vw + 140px)) translateY(6px);
-  }
-}
-
-@keyframes float-cloud-5 {
-  from {
-    transform: translateX(-200px) translateY(0px);
-  }
-  to {
-    transform: translateX(calc(100vw + 200px)) translateY(-10px);
-  }
-}
-
-@keyframes float-cloud-6 {
-  from {
-    transform: translateX(-240px) translateY(0px);
-  }
-  to {
-    transform: translateX(calc(100vw + 240px)) translateY(18px);
-  }
-}
-
-@keyframes float-cloud-7 {
-  from {
-    transform: translateX(-160px) translateY(0px);
-  }
-  to {
-    transform: translateX(calc(100vw + 160px)) translateY(4px);
+    transform: translateX(calc(100vw + 160px)) translateY(6px);
   }
 }
 
