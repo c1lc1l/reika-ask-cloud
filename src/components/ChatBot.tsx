@@ -99,129 +99,128 @@ const ChatBot = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen max-w-5xl mx-auto relative">
+    <div className="min-h-screen flex items-center justify-center p-4 relative">
       {/* Floating Clouds */}
-      <div className="absolute top-20 right-10 w-32 h-16 opacity-30 pointer-events-none z-0">
-        <div className="w-full h-full bg-gradient-to-r from-cloud-cream/60 to-cloud-beige/40 rounded-full blur-sm"></div>
+      <div className="floating-clouds">
+        <div className="cloud cloud-1"></div>
+        <div className="cloud cloud-2"></div>
+        <div className="cloud cloud-3"></div>
+        <div className="cloud cloud-4"></div>
       </div>
-      <div className="absolute top-40 left-5 w-24 h-12 opacity-20 pointer-events-none z-0">
-        <div className="w-full h-full bg-gradient-to-r from-cloud-beige/50 to-cloud-cream/30 rounded-full blur-sm"></div>
-      </div>
-      
-      {/* Header */}
-      <header className="relative z-10 backdrop-blur-glass border-b border-border/30 px-6 py-6 shadow-2xl">
-        <div className="text-center mb-4">
-          <div className="text-xs font-semibold text-accent tracking-wider uppercase mb-2">
-            AWS Cloud Club PCU Cavite
-          </div>
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground text-3d mb-2 animate-pulse">
-            CHAT WITH REIKA
-          </h1>
-          <p className="text-sm text-muted-foreground font-medium">
-            Your AI Assistant • Always Day 1 Energy ☁️
-          </p>
-        </div>
-      </header>
 
-      {/* Messages Container */}
-      <div className="flex-1 overflow-y-auto p-6 space-y-6 relative z-10 backdrop-blur-glass">
-        {/* More floating cloud elements */}
-        <div className="absolute top-10 right-20 w-20 h-10 opacity-15 pointer-events-none">
-          <div className="w-full h-full bg-gradient-to-r from-cloud-cream/40 to-cloud-beige/20 rounded-full blur-md"></div>
-        </div>
-        
-        {messages.map((message) => (
-          <div
-            key={message.id}
-            className={`flex gap-4 message-enter ${
-              message.sender === 'user' ? 'justify-end' : 'justify-start'
-            }`}
-          >
-            {message.sender === 'bot' && (
+      {/* Compact Chat Container */}
+      <div className="w-full max-w-4xl h-[70vh] flex flex-col chat-glass rounded-3xl overflow-hidden relative z-10">
+        {/* Header */}
+        <header className="backdrop-blur-glass border-b border-border/30 px-6 py-6 flex-shrink-0">
+          <div className="text-center">
+            <div className="text-xs font-semibold text-accent tracking-wider uppercase mb-2">
+              AWS Cloud Club PCU Cavite
+            </div>
+            <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground text-3d mb-2">
+              CHAT WITH REIKA
+            </h1>
+            <p className="text-sm text-muted-foreground font-medium">
+              Your AI Assistant • Always Day 1 Energy ☁️
+            </p>
+          </div>
+        </header>
+
+        {/* Messages Container */}
+        <div className="flex-1 overflow-y-auto p-6 space-y-4 relative">
+          {messages.map((message) => (
+            <div
+              key={message.id}
+              className={`flex gap-4 message-enter ${
+                message.sender === 'user' ? 'justify-end' : 'justify-start'
+              }`}
+            >
+              {message.sender === 'bot' && (
+                <Avatar className="h-9 w-9 flex-shrink-0 shadow-lg">
+                  <AvatarFallback className="bg-gradient-to-br from-primary to-accent text-primary-foreground text-sm font-bold border-2 border-accent/30">
+                    <Bot className="h-5 w-5" />
+                  </AvatarFallback>
+                </Avatar>
+              )}
+              
+              <div
+                className={`message-bubble max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg px-5 py-4 cloud-bubble backdrop-filter backdrop-blur-sm ${
+                  message.sender === 'user'
+                    ? 'bg-gradient-to-br from-primary/90 to-accent/85 text-primary-foreground border border-primary/30'
+                    : 'bg-bot-bubble text-bot-bubble-foreground border border-border/30'
+                }`}
+              >
+                <p className="text-sm leading-relaxed whitespace-pre-wrap font-medium">{message.text}</p>
+                <div className={`text-xs mt-3 opacity-75 font-medium ${
+                  message.sender === 'user' ? 'text-primary-foreground' : 'text-muted-foreground'
+                }`}>
+                  {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                </div>
+              </div>
+
+              {message.sender === 'user' && (
+                <Avatar className="h-9 w-9 flex-shrink-0 shadow-lg">
+                  <AvatarFallback className="bg-gradient-to-br from-secondary to-accent text-secondary-foreground text-sm font-bold border-2 border-secondary/30">
+                    You
+                  </AvatarFallback>
+                </Avatar>
+              )}
+            </div>
+          ))}
+          
+          {isLoading && (
+            <div className="flex gap-4 justify-start message-enter">
               <Avatar className="h-9 w-9 flex-shrink-0 shadow-lg">
                 <AvatarFallback className="bg-gradient-to-br from-primary to-accent text-primary-foreground text-sm font-bold border-2 border-accent/30">
                   <Bot className="h-5 w-5" />
                 </AvatarFallback>
               </Avatar>
-            )}
-            
-            <div
-              className={`message-bubble max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg px-5 py-4 shadow-2xl backdrop-blur-glass border-2 ${
-                message.sender === 'user'
-                  ? 'user-bubble cloud-border border-primary/30 bg-gradient-to-br from-primary to-accent text-primary-foreground'
-                  : 'bot-bubble cloud-border border-border/30 bg-bot-bubble text-bot-bubble-foreground'
-              }`}
-            >
-              <p className="text-sm leading-relaxed whitespace-pre-wrap font-medium">{message.text}</p>
-              <div className={`text-xs mt-3 opacity-75 font-medium ${
-                message.sender === 'user' ? 'text-primary-foreground' : 'text-muted-foreground'
-              }`}>
-                {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-              </div>
-            </div>
-
-            {message.sender === 'user' && (
-              <Avatar className="h-9 w-9 flex-shrink-0 shadow-lg">
-                <AvatarFallback className="bg-gradient-to-br from-secondary to-accent text-secondary-foreground text-sm font-bold border-2 border-secondary/30">
-                  You
-                </AvatarFallback>
-              </Avatar>
-            )}
-          </div>
-        ))}
-        
-        {isLoading && (
-          <div className="flex gap-4 justify-start message-enter">
-            <Avatar className="h-9 w-9 flex-shrink-0 shadow-lg">
-              <AvatarFallback className="bg-gradient-to-br from-primary to-accent text-primary-foreground text-sm font-bold border-2 border-accent/30">
-                <Bot className="h-5 w-5" />
-              </AvatarFallback>
-            </Avatar>
-            <div className="bot-bubble max-w-xs px-5 py-4 cloud-border shadow-2xl backdrop-blur-glass border-2 border-border/30 bg-bot-bubble">
-              <div className="flex items-center gap-3">
-                <div className="flex gap-1">
-                  <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-                  <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-                  <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+              <div className="max-w-xs px-5 py-4 cloud-bubble bg-bot-bubble text-bot-bubble-foreground border border-border/30 backdrop-filter backdrop-blur-sm">
+                <div className="flex items-center gap-3">
+                  <div className="flex gap-1">
+                    <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                    <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                    <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                  </div>
+                  <span className="text-xs text-muted-foreground font-medium">Reika is thinking...</span>
                 </div>
-                <span className="text-xs text-muted-foreground font-medium">Reika is thinking...</span>
               </div>
             </div>
-          </div>
-        )}
-        
-        <div ref={messagesEndRef} />
-      </div>
-
-      {/* Input Area */}
-      <div className="relative z-10 border-t border-border/20 backdrop-blur-glass p-6 shadow-2xl">
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-60"></div>
-        
-        <div className="flex gap-4 max-w-4xl mx-auto">
-          <Input
-            ref={inputRef}
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-            onKeyPress={handleKeyPress}
-            placeholder="Ask me about AWS Cloud Club PCU Cavite... ☁️"
-            className="flex-1 chat-input cloud-border border-border/50 bg-input backdrop-blur-glass shadow-xl text-foreground placeholder:text-muted-foreground font-medium px-5 py-3 text-sm focus:ring-2 focus:ring-accent/50 focus:border-accent/50 transition-all duration-200"
-            disabled={isLoading}
-          />
-          <Button
-            onClick={handleSendMessage}
-            disabled={!inputValue.trim() || isLoading}
-            className="send-button px-6 py-3 cloud-border text-primary-foreground border-0 shadow-xl bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary transition-all duration-300 hover:scale-105 active:scale-95 font-bold"
-            size="sm"
-          >
-            <Send className="h-4 w-4" />
-            <span className="sr-only">Send message</span>
-          </Button>
+          )}
+          
+          <div ref={messagesEndRef} />
         </div>
-        
-        <div className="text-center mt-4">
-          <p className="text-xs text-muted-foreground font-medium">
-            🌤️ Reika specializes in AWS Cloud Club PCU Cavite • Always Day 1 Spirit
-          </p>
+
+        {/* Input Area */}
+        <div className="backdrop-blur-glass border-t border-border/20 p-6 flex-shrink-0 relative">
+          {/* Cloud-like decorative border */}
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-40 h-2 bg-gradient-to-r from-transparent via-accent/40 to-transparent rounded-full blur-sm"></div>
+          
+          <div className="flex gap-4">
+            <Input
+              ref={inputRef}
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              onKeyPress={handleKeyPress}
+              placeholder="Ask me about AWS Cloud Club PCU Cavite... ☁️"
+              className="flex-1 cloud-input text-foreground placeholder:text-muted-foreground font-medium px-6 py-4 text-sm focus:ring-2 focus:ring-accent/60 focus:border-accent/60 transition-all duration-300 hover:shadow-lg"
+              disabled={isLoading}
+            />
+            <Button
+              onClick={handleSendMessage}
+              disabled={!inputValue.trim() || isLoading}
+              className="px-6 py-4 cloud-border text-primary-foreground border-0 shadow-xl bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary transition-all duration-300 hover:scale-105 active:scale-95 font-bold hover:shadow-2xl"
+              size="sm"
+            >
+              <Send className="h-5 w-5" />
+              <span className="sr-only">Send message</span>
+            </Button>
+          </div>
+          
+          <div className="text-center mt-4">
+            <p className="text-xs text-muted-foreground font-medium">
+              🌤️ Reika specializes in AWS Cloud Club PCU Cavite • Always Day 1 Spirit
+            </p>
+          </div>
         </div>
       </div>
     </div>
