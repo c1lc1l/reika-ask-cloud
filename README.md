@@ -1,73 +1,166 @@
-# Welcome to your Lovable project
+# Chat with Reika – AWS Cloud Club PCU Cavite Assistant
 
-## Project info
+A modern, responsive chatbot interface for the AWS Cloud Club PCU Cavite. Reika is designed to answer questions about club activities, events, and resources.
 
-**URL**: https://lovable.dev/projects/94e71a48-7d9f-4619-b0ed-a84104156664
+## 🚀 Features
 
-## How can I edit this code?
+- **Modern Chat Interface**: Clean, responsive design with smooth animations
+- **Brand Colors**: Uses the official AWS Cloud Club PCU Cavite color palette
+- **Mobile-Friendly**: Optimized for all device sizes
+- **AWS Integration Ready**: Configured for Lambda endpoint integration
+- **Auto-Deploy**: GitHub Actions workflow for S3/CloudFront deployment
 
-There are several ways of editing your application.
+## 🛠️ Tech Stack
 
-**Use Lovable**
+- React 18 + TypeScript
+- Tailwind CSS
+- Shadcn UI Components
+- Vite for build tooling
+- AWS S3 + CloudFront for hosting
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/94e71a48-7d9f-4619-b0ed-a84104156664) and start prompting.
+## 📦 Installation & Development
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
+- Node.js 18+ and npm
+- Git
 
-**Use your preferred IDE**
+### Local Development
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd reika-chatbot
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+# Install dependencies
+npm install
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build for Production
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🔧 Configuration
 
-## What technologies are used for this project?
+### API Endpoint Setup
 
-This project is built with:
+1. Open `src/components/ChatBot.tsx`
+2. Replace the placeholder URL in the `handleSendMessage` function:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```typescript
+// Replace this line:
+// const response = await fetch('YOUR_LAMBDA_ENDPOINT_HERE', {
 
-## How can I deploy this project?
+// With your actual Lambda endpoint:
+const response = await fetch('https://your-api-gateway-url.amazonaws.com/stage/chat', {
+```
 
-Simply open [Lovable](https://lovable.dev/projects/94e71a48-7d9f-4619-b0ed-a84104156664) and click on Share -> Publish.
+### AWS Deployment Setup
 
-## Can I connect a custom domain to my Lovable project?
+1. Create the following GitHub Secrets in your repository:
+   - `AWS_ACCESS_KEY_ID`: Your AWS access key
+   - `AWS_SECRET_ACCESS_KEY`: Your AWS secret key
+   - `AWS_REGION`: Your AWS region (e.g., `us-east-1`)
+   - `S3_BUCKET_NAME`: Your S3 bucket name
+   - `CLOUDFRONT_DISTRIBUTION_ID`: Your CloudFront distribution ID
 
-Yes, you can!
+2. Push to the `main` branch to trigger automatic deployment
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🎨 Customization
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Brand Colors
+The app uses your provided color palette defined in `src/index.css`:
+
+- **Navy**: `#232f3e` (Primary)
+- **Coral**: `#f37952` (Accent)
+- **Light Green**: `#ecf7bb` (Success)
+- **Orange**: `#f9b66b` (Warning)
+- **Teal**: `#4f888e` & `#629999` (Secondary)
+- **Purple/Gray**: `#2a2836` & `#282d3a` (Dark variants)
+
+### Font
+The app uses **Open Sans** as specified. The font is loaded from Google Fonts in `index.html`.
+
+### Avatar/Logo
+To replace Reika's placeholder avatar:
+
+1. Add your custom avatar image to `public/`
+2. Update the Avatar component in `src/components/ChatBot.tsx`
+
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   ├── ui/              # Shadcn UI components
+│   └── ChatBot.tsx      # Main chatbot component
+├── pages/
+│   └── Index.tsx        # Main page
+├── lib/
+│   └── utils.ts         # Utility functions
+├── hooks/               # React hooks
+├── index.css           # Global styles & design system
+└── main.tsx            # App entry point
+
+.github/
+└── workflows/
+    └── deploy.yml      # CI/CD pipeline
+```
+
+## 🤖 Chatbot Behavior
+
+Reika is configured to:
+- Only answer questions about AWS Cloud Club PCU Cavite
+- Provide a friendly fallback message for off-topic questions
+- Maintain conversation context through the chat session
+- Display typing indicators and timestamps
+
+## 🚀 Deployment
+
+The app is configured for automatic deployment to AWS:
+
+1. **S3 Hosting**: Static files served from S3 bucket
+2. **CloudFront CDN**: Global content delivery with caching
+3. **GitHub Actions**: Automatic build and deployment on push to main
+
+### Manual Deployment
+
+```bash
+# Build the project
+npm run build
+
+# Upload to S3 (replace with your bucket name)
+aws s3 sync dist/ s3://your-bucket-name --delete
+
+# Invalidate CloudFront cache (replace with your distribution ID)
+aws cloudfront create-invalidation --distribution-id YOUR_DISTRIBUTION_ID --paths "/*"
+```
+
+## 📱 Browser Support
+
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is developed for AWS Cloud Club PCU Cavite.
+
+---
+
+**AWS Cloud Club PCU Cavite** - Empowering students with cloud computing knowledge! ☁️

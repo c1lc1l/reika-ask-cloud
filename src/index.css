@@ -8,35 +8,64 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Brand Colors from Palette */
+    --brand-navy: 217 25% 20%;        /* #232f3e */
+    --brand-coral: 17 89% 64%;        /* #f37952 */
+    --brand-light-green: 70 69% 85%;  /* #ecf7bb */
+    --brand-orange: 33 85% 72%;       /* #f9b66b */
+    --brand-teal: 193 29% 42%;        /* #4f888e */
+    --brand-teal-light: 180 23% 53%;  /* #629999 */
+    --brand-purple: 246 14% 17%;      /* #2a2836 */
+    --brand-gray: 221 16% 19%;        /* #282d3a */
+
+    /* Design System */
+    --background: 220 25% 97%;
+    --foreground: 217 25% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 217 25% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 217 25% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 217 25% 20%;            /* Navy */
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 180 23% 53%;          /* Teal Light */
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 25% 95%;
+    --muted-foreground: 221 16% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 17 89% 64%;              /* Coral */
+    --accent-foreground: 0 0% 98%;
+
+    --success: 70 69% 75%;             /* Light Green */
+    --success-foreground: 217 25% 20%;
+
+    --warning: 33 85% 72%;             /* Orange */
+    --warning-foreground: 217 25% 20%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 25% 90%;
+    --input: 220 25% 95%;
+    --ring: 217 25% 20%;
 
-    --radius: 0.5rem;
+    /* Chat specific colors */
+    --chat-bg: 220 25% 98%;
+    --user-bubble: 17 89% 64%;         /* Coral */
+    --user-bubble-foreground: 0 0% 98%;
+    --bot-bubble: 0 0% 100%;
+    --bot-bubble-foreground: 217 25% 20%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 25% 20%), hsl(221 16% 19%));
+    --gradient-background: linear-gradient(180deg, hsl(220 25% 98%), hsl(220 25% 96%));
+    --gradient-accent: linear-gradient(135deg, hsl(17 89% 64%), hsl(33 85% 72%));
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +85,50 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 221 16% 19%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 217 25% 20%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 217 25% 20%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 217 25% 20%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 193 29% 42%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 246 14% 17%;
+    --muted-foreground: 220 25% 70%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 17 89% 64%;
+    --accent-foreground: 0 0% 98%;
+
+    --success: 70 69% 60%;
+    --success-foreground: 0 0% 98%;
+
+    --warning: 33 85% 65%;
+    --warning-foreground: 217 25% 20%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 246 14% 25%;
+    --input: 246 14% 25%;
+    --ring: 17 89% 64%;
+
+    --chat-bg: 221 16% 16%;
+    --user-bubble: 17 89% 64%;
+    --user-bubble-foreground: 0 0% 98%;
+    --bot-bubble: 217 25% 20%;
+    --bot-bubble-foreground: 0 0% 98%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(217 25% 20%), hsl(246 14% 17%));
+    --gradient-background: linear-gradient(180deg, hsl(221 16% 19%), hsl(246 14% 17%));
+    --gradient-accent: linear-gradient(135deg, hsl(17 89% 64%), hsl(33 85% 72%));
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +146,70 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    background: hsl(var(--gradient-background));
+    min-height: 100vh;
+  }
+
+  /* Chat animations */
+  .message-enter {
+    animation: message-fade-in 0.3s ease-out;
+  }
+
+  .message-bubble {
+    @apply shadow-sm backdrop-blur-sm;
+    animation: bubble-scale-in 0.2s ease-out;
+  }
+
+  .user-bubble {
+    background: hsl(var(--user-bubble));
+    color: hsl(var(--user-bubble-foreground));
+  }
+
+  .bot-bubble {
+    background: hsl(var(--bot-bubble));
+    color: hsl(var(--bot-bubble-foreground));
+    border: 1px solid hsl(var(--border));
+  }
+
+  .chat-input:focus {
+    @apply ring-2 ring-accent/50 border-accent/50;
+  }
+
+  .send-button {
+    background: hsl(var(--gradient-accent));
+    @apply transition-all duration-200 hover:scale-105 active:scale-95;
+  }
+
+  .send-button:hover {
+    box-shadow: 0 4px 12px hsl(var(--accent) / 0.3);
+  }
+}
+
+@layer utilities {
+  .font-sans {
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+}
+
+@keyframes message-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bubble-scale-in {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }
