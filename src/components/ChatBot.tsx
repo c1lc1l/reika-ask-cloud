@@ -118,21 +118,21 @@ const ChatBot = () => {
             </div>
             <div className="flex items-center justify-center gap-4 mb-3">
               <img 
-                src="/lovable-uploads/ee65b2f7-ce00-46ca-9e95-9182b72dbb49.png" 
+                src="/whitelogoaws.png" 
                 alt="AWS Cloud Club PCU Cavite" 
-                className="w-12 h-12 object-contain"
+                className="w-16 h-16 object-contain"
               />
               <h1 className="text-4xl md:text-5xl font-display font-black text-header-contrast text-3d-enhanced tracking-wide">
-                CHAT WITH REIKA
+                REIKA THE ORCA
               </h1>
               <img 
                 src="/lovable-uploads/ee65b2f7-ce00-46ca-9e95-9182b72dbb49.png" 
                 alt="AWS Cloud Club PCU Cavite" 
-                className="w-12 h-12 object-contain"
+                className="w-16 h-16 object-contain"
               />
             </div>
             <p className="text-sm text-header-contrast font-semibold tracking-wide opacity-90">
-              Your AI Assistant • Always Day 1 Energy ⚡
+              It's Alwaaaaays Day One!! Eeeeek! Eeek!
             </p>
           </div>
         </header>
@@ -147,8 +147,8 @@ const ChatBot = () => {
               }`}
             >
               {message.sender === 'bot' && (
-                <Avatar className="h-9 w-9 flex-shrink-0 shadow-lg">
-                  <AvatarImage src="/orca-logo.png" alt="Reika" />
+                <Avatar className="h-14 w-14 flex-shrink-0 shadow-lg">
+                  <AvatarImage src="/reikachatbot.png" alt="Reika" />
                   <AvatarFallback className="bg-gradient-to-br from-primary to-accent text-primary-foreground text-sm font-bold border-2 border-accent/30">
                     R
                   </AvatarFallback>
@@ -237,7 +237,7 @@ const ChatBot = () => {
           
           <div className="text-center mt-4">
             <p className="text-xs text-header-contrast opacity-75 font-semibold tracking-wide">
-              ⚡ Reika specializes in AWS Cloud Club PCU Cavite • Always Day 1 Spirit ⚡
+              🐋 Powered by Reika the Orca | © 2025 AWS Cloud Club - PCU Cavite
             </p>
           </div>
         </div>
