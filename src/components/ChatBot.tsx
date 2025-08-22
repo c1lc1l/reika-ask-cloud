@@ -116,9 +116,21 @@ const ChatBot = () => {
             <div className="text-xs font-bold text-header-contrast tracking-wider uppercase mb-3 animate-pulse">
               ☁️ AWS Cloud Club PCU Cavite ☁️
             </div>
-            <h1 className="text-4xl md:text-5xl font-display font-black text-header-contrast text-3d-enhanced mb-3 tracking-wide">
-              CHAT WITH REIKA
-            </h1>
+            <div className="flex items-center justify-center gap-4 mb-3">
+              <img 
+                src="/lovable-uploads/ee65b2f7-ce00-46ca-9e95-9182b72dbb49.png" 
+                alt="AWS Cloud Club PCU Cavite" 
+                className="w-12 h-12 object-contain"
+              />
+              <h1 className="text-4xl md:text-5xl font-display font-black text-header-contrast text-3d-enhanced tracking-wide">
+                CHAT WITH REIKA
+              </h1>
+              <img 
+                src="/lovable-uploads/ee65b2f7-ce00-46ca-9e95-9182b72dbb49.png" 
+                alt="AWS Cloud Club PCU Cavite" 
+                className="w-12 h-12 object-contain"
+              />
+            </div>
             <p className="text-sm text-header-contrast font-semibold tracking-wide opacity-90">
               Your AI Assistant • Always Day 1 Energy ⚡
             </p>
@@ -136,7 +148,7 @@ const ChatBot = () => {
             >
               {message.sender === 'bot' && (
                 <Avatar className="h-9 w-9 flex-shrink-0 shadow-lg">
-                  <AvatarImage src="/lovable-uploads/ee65b2f7-ce00-46ca-9e95-9182b72dbb49.png" alt="AWS Cloud Club PCU Cavite" />
+                  <AvatarImage src="/orca-logo.png" alt="Reika" />
                   <AvatarFallback className="bg-gradient-to-br from-primary to-accent text-primary-foreground text-sm font-bold border-2 border-accent/30">
                     R
                   </AvatarFallback>
@@ -175,7 +187,7 @@ const ChatBot = () => {
           {isLoading && (
             <div className="flex gap-4 justify-start message-enter">
               <Avatar className="h-9 w-9 flex-shrink-0 shadow-lg">
-                <AvatarImage src="/lovable-uploads/ee65b2f7-ce00-46ca-9e95-9182b72dbb49.png" alt="AWS Cloud Club PCU Cavite" />
+                <AvatarImage src="/orca-logo.png" alt="Reika" />
                 <AvatarFallback className="bg-gradient-to-br from-primary to-accent text-primary-foreground text-sm font-bold border-2 border-accent/30">
                   R
                 </AvatarFallback>
