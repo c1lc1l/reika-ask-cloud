@@ -53,12 +53,17 @@ All colors MUST be HSL.
     --input: 45 35% 90% / 0.8;
     --ring: 15 85% 60%;
 
-    /* Chat specific colors */
+    /* Chat specific colors - High Contrast for Readability */
     --chat-bg: transparent;
     --user-bubble: 15 85% 60%;         /* Coral user bubble */
-    --user-bubble-foreground: 45 35% 92%;
-    --bot-bubble: 45 35% 88% / 0.9;    /* Semi-transparent cream */
-    --bot-bubble-foreground: 188 45% 15%;
+    --user-bubble-foreground: 0 0% 100%;  /* Pure white for maximum contrast */
+    --bot-bubble: 0 0% 98%;            /* Nearly pure white background */
+    --bot-bubble-foreground: 0 0% 15%;    /* Very dark text for maximum readability */
+    
+    /* Enhanced text colors for readability */
+    --text-dark: 0 0% 15%;             /* Deep charcoal for maximum readability */
+    --text-medium: 0 0% 25%;           /* Medium dark for secondary text */
+    --timestamp-text: 0 0% 35%;        /* Darker timestamps */
 
     /* Dramatic Sky Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(15 85% 60%), hsl(25 90% 65%));
@@ -125,9 +130,14 @@ All colors MUST be HSL.
 
     --chat-bg: transparent;
     --user-bubble: 15 85% 65%;
-    --user-bubble-foreground: 45 35% 92%;
-    --bot-bubble: 45 35% 88% / 0.1;
-    --bot-bubble-foreground: 45 35% 92%;
+    --user-bubble-foreground: 0 0% 100%;  /* Pure white for maximum contrast */
+    --bot-bubble: 0 0% 97%;            /* Very light background for dark mode */
+    --bot-bubble-foreground: 0 0% 20%;    /* Dark text for readability */
+    
+    /* Enhanced text colors for dark mode */
+    --text-dark: 0 0% 20%;             /* Dark text for light backgrounds */
+    --text-medium: 0 0% 30%;           /* Medium dark for secondary text */
+    --timestamp-text: 0 0% 40%;        /* Darker timestamps */
 
     --gradient-background: radial-gradient(ellipse at center bottom, hsl(45 95% 70% / 0.3) 0%, hsl(25 90% 65% / 0.2) 25%, hsl(15 85% 60% / 0.1) 50%, hsl(188 55% 25%) 75%, hsl(188 75% 15%) 100%);
     --gradient-sunbeam: conic-gradient(from 180deg at 50% 120%, transparent 0deg, hsl(45 95% 70% / 0.05) 60deg, hsl(25 90% 65% / 0.03) 120deg, transparent 180deg, hsl(15 85% 60% / 0.03) 240deg, hsl(45 95% 70% / 0.05) 300deg, transparent 360deg);
@@ -487,25 +497,53 @@ All colors MUST be HSL.
 
   .bot-bubble-enhanced {
     background: linear-gradient(135deg, 
-      hsl(45 35% 88% / 0.85) 0%, 
-      hsl(40 25% 85% / 0.8) 50%, 
-      hsl(45 35% 88% / 0.85) 100%);
+      hsl(0 0% 98% / 0.95) 0%, 
+      hsl(0 0% 96% / 0.92) 50%, 
+      hsl(0 0% 98% / 0.95) 100%);
     backdrop-filter: blur(15px);
     box-shadow: 
       0 8px 30px hsl(var(--deep-teal) / 0.08),
       0 3px 12px hsl(var(--border) / 0.08),
       inset 0 1px 0 hsl(var(--foreground) / 0.08);
   }
+  
+  /* High contrast text classes for readability */
+  .text-readable-dark {
+    color: hsl(var(--text-dark)) !important;
+  }
+  
+  .text-readable-medium {
+    color: hsl(var(--text-medium)) !important;
+  }
+  
+  .text-timestamp {
+    color: hsl(var(--timestamp-text)) !important;
+  }
+  
+  .text-user-contrast {
+    color: hsl(0 0% 100%) !important;
+    text-shadow: 0 1px 2px hsl(0 0% 0% / 0.5);
+  }
+  
+  .text-header-contrast {
+    color: hsl(0 0% 100%) !important;
+    text-shadow: 2px 2px 4px hsl(0 0% 0% / 0.5);
+  }
 
   .cloud-input {
     border-radius: 35px;
     background: linear-gradient(135deg, 
-      hsl(45 35% 88% / 0.8) 0%, 
-      hsl(40 25% 85% / 0.85) 100%);
-    border: 1px solid hsl(var(--border) / 0.2);
+      hsl(0 0% 98% / 0.92) 0%, 
+      hsl(0 0% 96% / 0.95) 100%);
+    border: 1px solid hsl(var(--border) / 0.3);
     box-shadow: 
       inset 0 3px 12px hsl(var(--deep-teal) / 0.03),
       0 8px 30px hsl(var(--deep-teal) / 0.08);
+    color: hsl(var(--text-dark));
+  }
+  
+  .cloud-input::placeholder {
+    color: hsl(var(--text-medium)) !important;
   }
 
   .text-3d-enhanced {

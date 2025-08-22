@@ -113,13 +113,13 @@ const ChatBot = () => {
         {/* Header */}
         <header className="backdrop-blur-glass border-b border-border/20 px-6 py-6 flex-shrink-0 premium-glow chat-header">
           <div className="text-center">
-            <div className="text-xs font-bold text-accent tracking-wider uppercase mb-3 animate-pulse">
+            <div className="text-xs font-bold text-header-contrast tracking-wider uppercase mb-3 animate-pulse">
               ☁️ AWS Cloud Club PCU Cavite ☁️
             </div>
-            <h1 className="text-4xl md:text-5xl font-display font-black text-foreground text-3d-enhanced mb-3 tracking-wide">
+            <h1 className="text-4xl md:text-5xl font-display font-black text-header-contrast text-3d-enhanced mb-3 tracking-wide">
               CHAT WITH REIKA
             </h1>
-            <p className="text-sm text-muted-foreground font-semibold tracking-wide">
+            <p className="text-sm text-header-contrast font-semibold tracking-wide opacity-90">
               Your AI Assistant • Always Day 1 Energy ⚡
             </p>
           </div>
@@ -145,13 +145,17 @@ const ChatBot = () => {
               <div
                 className={`message-bubble max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg px-5 py-4 cloud-bubble backdrop-filter backdrop-blur-sm ${
                   message.sender === 'user'
-                    ? 'user-bubble-enhanced text-primary-foreground border border-primary/20'
-                    : 'bot-bubble-enhanced text-foreground border border-border/20'
+                    ? 'user-bubble-enhanced border border-primary/20'
+                    : 'bot-bubble-enhanced border border-border/20'
                 }`}
               >
-                <p className="text-sm leading-relaxed whitespace-pre-wrap font-medium">{message.text}</p>
-                <div className={`text-xs mt-3 opacity-75 font-medium ${
-                  message.sender === 'user' ? 'text-primary-foreground' : 'text-muted-foreground'
+                <p className={`text-sm leading-relaxed whitespace-pre-wrap font-medium ${
+                  message.sender === 'user' ? 'text-user-contrast' : 'text-readable-dark'
+                }`}>
+                  {message.text}
+                </p>
+                <div className={`text-xs mt-3 font-medium ${
+                  message.sender === 'user' ? 'text-user-contrast opacity-80' : 'text-timestamp'
                 }`}>
                   {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                 </div>
@@ -174,14 +178,14 @@ const ChatBot = () => {
                   <Bot className="h-5 w-5" />
                 </AvatarFallback>
               </Avatar>
-              <div className="max-w-xs px-5 py-4 cloud-bubble bot-bubble-enhanced text-foreground border border-border/20 backdrop-filter backdrop-blur-sm">
+              <div className="max-w-xs px-5 py-4 cloud-bubble bot-bubble-enhanced border border-border/20 backdrop-filter backdrop-blur-sm">
                 <div className="flex items-center gap-3">
                   <div className="flex gap-1">
                     <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
                     <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
                     <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
                   </div>
-                  <span className="text-xs text-muted-foreground font-medium">Reika is thinking...</span>
+                  <span className="text-xs text-readable-medium font-medium">Reika is thinking...</span>
                 </div>
               </div>
             </div>
@@ -203,7 +207,7 @@ const ChatBot = () => {
               onChange={(e) => setInputValue(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="Ask me about AWS Cloud Club PCU Cavite... ☁️"
-              className="flex-1 cloud-input text-foreground placeholder:text-muted-foreground/70 font-medium px-6 py-4 text-sm focus:ring-2 focus:ring-accent/60 focus:border-accent/60 transition-all duration-300 hover:shadow-lg focus:shadow-xl"
+              className="flex-1 cloud-input font-medium px-6 py-4 text-sm focus:ring-2 focus:ring-accent/60 focus:border-accent/60 transition-all duration-300 hover:shadow-lg focus:shadow-xl"
               disabled={isLoading}
             />
             <Button
@@ -218,7 +222,7 @@ const ChatBot = () => {
           </div>
           
           <div className="text-center mt-4">
-            <p className="text-xs text-muted-foreground/80 font-semibold tracking-wide">
+            <p className="text-xs text-header-contrast opacity-75 font-semibold tracking-wide">
               ⚡ Reika specializes in AWS Cloud Club PCU Cavite • Always Day 1 Spirit ⚡
             </p>
           </div>
