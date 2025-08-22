@@ -15,7 +15,7 @@ const ChatBot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: "Hi! I'm Reika, your AWS Cloud Club PCU Cavite assistant! 👋 I'm here to help answer questions about our club activities, events, and resources. What would you like to know?",
+      text: "Eeeeeek! Eeek! I'm Reikaaaa, your Killer Cloud Orca! 👋 I'm here to splash some eeek eeek answers to your cloudy questions!",
       sender: 'bot',
       timestamp: new Date(),
     },
@@ -128,7 +128,7 @@ const ChatBot = () => {
               <img 
                 src="/lovable-uploads/ee65b2f7-ce00-46ca-9e95-9182b72dbb49.png" 
                 alt="AWS Cloud Club PCU Cavite" 
-                className="w-16 h-16 object-contain"
+                className="w-14 h-14 object-contain"
               />
             </div>
             <p className="text-sm text-header-contrast font-semibold tracking-wide opacity-90">
