@@ -543,12 +543,12 @@ All colors MUST be HSL.
       inset 0 2px 8px hsl(var(--deep-teal) / 0.05),
       0 4px 20px hsl(var(--deep-teal) / 0.1),
       0 1px 3px hsl(0 0% 0% / 0.1);
-    color: hsl(var(--text-dark));
+    color: hsl(0 0% 20% / 0.8);
   }
   
   .cloud-input::placeholder {
-    color: hsl(0 0% 30%) !important;
-    font-weight: 500;
+    color: hsl(0 0% 40% / 0.7) !important;
+    font-weight: 400;
   }
 
   .text-3d-enhanced {
