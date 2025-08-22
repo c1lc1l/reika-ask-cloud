@@ -430,6 +430,7 @@ All colors MUST be HSL.
       0 30px 100px hsl(var(--deep-teal) / 0.12),
       inset 0 1px 0 hsl(var(--foreground) / 0.03),
       inset 0 -1px 0 hsl(var(--accent) / 0.02);
+    animation: float-gentle 6s ease-in-out infinite;
   }
 
   .chat-header {
@@ -586,6 +587,15 @@ All colors MUST be HSL.
   }
   to {
     transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
 
