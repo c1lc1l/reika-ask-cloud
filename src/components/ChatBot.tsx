@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { Send, Bot } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Send } from 'lucide-react';
 
 interface Message {
   id: string;
@@ -136,8 +136,9 @@ const ChatBot = () => {
             >
               {message.sender === 'bot' && (
                 <Avatar className="h-9 w-9 flex-shrink-0 shadow-lg">
+                  <AvatarImage src="/lovable-uploads/ee65b2f7-ce00-46ca-9e95-9182b72dbb49.png" alt="AWS Cloud Club PCU Cavite" />
                   <AvatarFallback className="bg-gradient-to-br from-primary to-accent text-primary-foreground text-sm font-bold border-2 border-accent/30">
-                    <Bot className="h-5 w-5" />
+                    R
                   </AvatarFallback>
                 </Avatar>
               )}
@@ -174,8 +175,9 @@ const ChatBot = () => {
           {isLoading && (
             <div className="flex gap-4 justify-start message-enter">
               <Avatar className="h-9 w-9 flex-shrink-0 shadow-lg">
+                <AvatarImage src="/lovable-uploads/ee65b2f7-ce00-46ca-9e95-9182b72dbb49.png" alt="AWS Cloud Club PCU Cavite" />
                 <AvatarFallback className="bg-gradient-to-br from-primary to-accent text-primary-foreground text-sm font-bold border-2 border-accent/30">
-                  <Bot className="h-5 w-5" />
+                  R
                 </AvatarFallback>
               </Avatar>
               <div className="max-w-xs px-5 py-4 cloud-bubble bot-bubble-enhanced border border-border/20 backdrop-filter backdrop-blur-sm">
