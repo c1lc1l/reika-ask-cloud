@@ -126,7 +126,7 @@ const ChatBot = () => {
         </header>
 
         {/* Messages Container */}
-        <div className="flex-1 overflow-y-auto p-6 space-y-4 relative">
+        <div className="flex-1 overflow-y-auto p-6 space-y-4 relative chat-scrollbar">
           {messages.map((message) => (
             <div
               key={message.id}
@@ -146,7 +146,7 @@ const ChatBot = () => {
                 className={`message-bubble max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg px-5 py-4 cloud-bubble backdrop-filter backdrop-blur-sm ${
                   message.sender === 'user'
                     ? 'user-bubble-enhanced text-primary-foreground border border-primary/20'
-                    : 'bot-bubble-enhanced text-bot-bubble-foreground border border-border/20'
+                    : 'bot-bubble-enhanced text-foreground border border-border/20'
                 }`}
               >
                 <p className="text-sm leading-relaxed whitespace-pre-wrap font-medium">{message.text}</p>
@@ -174,7 +174,7 @@ const ChatBot = () => {
                   <Bot className="h-5 w-5" />
                 </AvatarFallback>
               </Avatar>
-              <div className="max-w-xs px-5 py-4 cloud-bubble bot-bubble-enhanced text-bot-bubble-foreground border border-border/20 backdrop-filter backdrop-blur-sm">
+              <div className="max-w-xs px-5 py-4 cloud-bubble bot-bubble-enhanced text-foreground border border-border/20 backdrop-filter backdrop-blur-sm">
                 <div className="flex items-center gap-3">
                   <div className="flex gap-1">
                     <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
