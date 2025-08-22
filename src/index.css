@@ -212,7 +212,7 @@ All colors MUST be HSL.
     animation: rotate-sunbeams 120s linear infinite;
   }
 
-  /* Enhanced Floating Clouds - Natural and Clean */
+  /* Enhanced Floating Clouds - Fluffy and Natural */
   .floating-clouds {
     position: fixed;
     inset: 0;
@@ -222,128 +222,149 @@ All colors MUST be HSL.
 
   .cloud {
     position: absolute;
-    background: linear-gradient(135deg, 
-      hsl(var(--cloud-cream) / 0.8) 0%, 
-      hsl(var(--cloud-beige) / 0.6) 100%);
-    border-radius: 100px;
-    filter: blur(0.5px);
-    box-shadow: 0 8px 24px hsl(var(--cloud-cream) / 0.2);
+    background: radial-gradient(ellipse at center, 
+      hsl(var(--cloud-cream) / 0.85) 0%, 
+      hsl(var(--cloud-beige) / 0.7) 60%, 
+      hsl(var(--cloud-cream) / 0.4) 100%);
+    border-radius: 60px 80px 70px 90px;
+    filter: blur(0.8px);
+    box-shadow: 
+      0 12px 35px hsl(var(--cloud-cream) / 0.25),
+      inset 0 3px 12px hsl(var(--cloud-cream) / 0.3);
   }
 
-  /* Create natural cloud shapes with pseudo-elements */
+  /* Create fluffy cloud shapes with multiple pseudo-elements */
   .cloud::before {
     content: '';
     position: absolute;
-    background: linear-gradient(135deg, 
+    background: radial-gradient(ellipse at 30% 40%, 
       hsl(var(--cloud-cream) / 0.9) 0%, 
-      hsl(var(--cloud-beige) / 0.7) 100%);
-    border-radius: 100px;
-    box-shadow: 0 4px 16px hsl(var(--cloud-cream) / 0.25);
+      hsl(var(--cloud-beige) / 0.75) 50%, 
+      hsl(var(--cloud-cream) / 0.5) 100%);
+    border-radius: 80px 60px 90px 70px;
+    box-shadow: 
+      0 8px 25px hsl(var(--cloud-cream) / 0.3),
+      inset 0 2px 8px hsl(var(--cloud-beige) / 0.2);
   }
 
   .cloud::after {
     content: '';
     position: absolute;
-    background: linear-gradient(135deg, 
+    background: radial-gradient(ellipse at 70% 60%, 
       hsl(var(--cloud-beige) / 0.8) 0%, 
-      hsl(var(--cloud-cream) / 0.6) 100%);
-    border-radius: 100px;
-    box-shadow: 0 3px 12px hsl(var(--cloud-beige) / 0.2);
+      hsl(var(--cloud-cream) / 0.65) 40%, 
+      hsl(var(--cloud-beige) / 0.4) 100%);
+    border-radius: 50px 90px 60px 80px;
+    box-shadow: 
+      0 6px 20px hsl(var(--cloud-beige) / 0.25),
+      inset 0 1px 6px hsl(var(--cloud-cream) / 0.3);
   }
 
-  /* Cloud 1 - Top left, partially visible */
+  /* Cloud 1 - Top left, fluffy cumulus */
   .cloud-1 {
-    width: 220px;
-    height: 100px;
+    width: 240px;
+    height: 120px;
     top: 8%;
-    left: -80px;
+    left: -90px;
     animation: float-cloud-1 35s infinite linear;
+    border-radius: 80px 100px 60px 120px;
   }
 
   .cloud-1::before {
-    width: 160px;
-    height: 80px;
-    top: 10px;
-    left: 40px;
+    width: 180px;
+    height: 90px;
+    top: -15px;
+    left: 30px;
+    border-radius: 90px 70px 100px 60px;
   }
 
   .cloud-1::after {
-    width: 120px;
-    height: 60px;
-    top: 20px;
-    left: 80px;
+    width: 140px;
+    height: 70px;
+    top: 25px;
+    left: 70px;
+    border-radius: 60px 110px 70px 80px;
   }
 
-  /* Cloud 2 - Middle right, floating freely */
+  /* Cloud 2 - Middle right, billowy formation */
   .cloud-2 {
-    width: 180px;
-    height: 85px;
+    width: 200px;
+    height: 100px;
     top: 45%;
-    left: -200px;
+    left: -220px;
     animation: float-cloud-2 40s infinite linear;
     animation-delay: -15s;
+    border-radius: 70px 90px 110px 60px;
   }
 
   .cloud-2::before {
-    width: 140px;
-    height: 70px;
-    top: 8px;
-    left: 20px;
+    width: 160px;
+    height: 80px;
+    top: -10px;
+    left: 15px;
+    border-radius: 100px 60px 80px 90px;
   }
 
   .cloud-2::after {
-    width: 100px;
-    height: 50px;
-    top: 15px;
-    left: 60px;
+    width: 120px;
+    height: 60px;
+    top: 20px;
+    left: 50px;
+    border-radius: 50px 100px 60px 70px;
   }
 
-  /* Cloud 3 - Bottom, partially visible */
+  /* Cloud 3 - Bottom, puffy stratus */
   .cloud-3 {
-    width: 200px;
-    height: 90px;
+    width: 220px;
+    height: 105px;
     top: 78%;
-    left: -90px;
+    left: -100px;
     animation: float-cloud-3 38s infinite linear;
     animation-delay: -25s;
+    border-radius: 90px 70px 100px 80px;
   }
 
   .cloud-3::before {
-    width: 150px;
-    height: 75px;
-    top: 8px;
-    left: 30px;
+    width: 170px;
+    height: 85px;
+    top: -8px;
+    left: 25px;
+    border-radius: 80px 110px 60px 90px;
   }
 
   .cloud-3::after {
-    width: 110px;
-    height: 55px;
-    top: 18px;
-    left: 70px;
+    width: 130px;
+    height: 65px;
+    top: 25px;
+    left: 60px;
+    border-radius: 70px 60px 100px 80px;
   }
 
-  /* Cloud 4 - Top center, floating freely */
+  /* Cloud 4 - Top center, wispy cumulus */
   .cloud-4 {
-    width: 160px;
-    height: 75px;
+    width: 180px;
+    height: 85px;
     top: 25%;
-    left: -180px;
+    left: -200px;
     animation: float-cloud-4 42s infinite linear;
     animation-delay: -8s;
+    border-radius: 60px 100px 70px 90px;
   }
 
   .cloud-4::before {
-    width: 120px;
-    height: 60px;
-    top: 8px;
-    left: 20px;
+    width: 140px;
+    height: 70px;
+    top: -5px;
+    left: 15px;
+    border-radius: 90px 60px 100px 70px;
   }
 
   .cloud-4::after {
-    width: 90px;
-    height: 45px;
-    top: 15px;
-    left: 50px;
+    width: 100px;
+    height: 50px;
+    top: 20px;
+    left: 45px;
+    border-radius: 50px 90px 60px 80px;
   }
 
   #root {
