@@ -213,7 +213,7 @@ const ChatBot = () => {
             <Button
               onClick={handleSendMessage}
               disabled={!inputValue.trim() || isLoading}
-              className="px-6 py-4 cloud-border text-primary-foreground border-0 shadow-xl bg-gradient-to-r from-primary via-accent to-primary hover:from-accent hover:via-primary hover:to-accent transition-all duration-300 hover:scale-105 active:scale-95 font-bold hover:shadow-2xl premium-glow"
+              className="px-6 py-4 cloud-border text-white border-2 border-white/30 shadow-2xl bg-gradient-to-r from-primary via-accent to-primary hover:from-accent hover:via-primary hover:to-accent transition-all duration-300 hover:scale-105 active:scale-95 font-bold hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] premium-glow ring-2 ring-white/20"
               size="sm"
             >
               <Send className="h-5 w-5" />
