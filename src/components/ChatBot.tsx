@@ -75,7 +75,7 @@ const ChatBot = () => {
       }
 
       const aiResponseText =
-        typeof parsed.Response === 'string' ? parsed.Response :
+        typeof parsed.response === 'string' ? parsed.response :
         typeof parsed.message === 'string' ? parsed.message :
         typeof parsed.error === 'string' ? parsed.error :
         "Sorry, I didn't get a response from the server.";
