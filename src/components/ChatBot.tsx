@@ -121,7 +121,7 @@ const ChatBot = () => {
       </div>
 
       {/* Compact Chat Container */}
-      <div className="w-full max-w-4xl h-[70vh] flex flex-col chat-glass rounded-3xl overflow-hidden relative z-10">
+      <div className="w-full max-w-4xl h-[80vh] flex flex-col chat-glass rounded-3xl overflow-hidden relative z-10">
         {/* Header */}
         <header className="backdrop-blur-glass border-b border-border/20 px-6 py-6 flex-shrink-0 premium-glow chat-header">
           <div className="text-center">
