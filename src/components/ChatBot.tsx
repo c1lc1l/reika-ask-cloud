@@ -48,29 +48,41 @@ const ChatBot = () => {
     setIsLoading(true);
 
     try {
-      // TODO: Replace with actual Lambda endpoint
-      // const response = await fetch('YOUR_LAMBDA_ENDPOINT_HERE', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ message: userMessage.text }),
-      // });
-      // const data = await response.json();
+      const response = await fetch('https://bqv2zlp21k.execute-api.ap-southeast-1.amazonaws.com/prod/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: userMessage.text }),
+      });
 
-      // Placeholder response logic
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API delay
-      
-      let botResponse = "I can only answer questions about AWS Cloud Club PCU Cavite and our activities 😊";
-      
-      // Simple keyword detection for demo purposes
-      const message = userMessage.text.toLowerCase();
-      if (message.includes('cloud') || message.includes('aws') || message.includes('club') || 
-          message.includes('event') || message.includes('activity') || message.includes('meeting')) {
-        botResponse = "Great question! As your AWS Cloud Club assistant, I'd love to help you with that. Our club focuses on cloud computing education, hands-on workshops, and AWS certification preparation. What specific aspect would you like to know more about?";
+      const data: unknown = await response.json();
+
+      // Parse the response safely
+      let parsed: Record<string, unknown>;
+      if (typeof data === 'object' && data !== null) {
+        parsed = data as Record<string, unknown>;
+        if (typeof parsed.body === 'string') {
+          try {
+            const bodyObj = JSON.parse(parsed.body);
+            if (typeof bodyObj === 'object' && bodyObj !== null) {
+              parsed = bodyObj;
+            }
+          } catch (e) {
+            console.error("Error parsing Lambda body:", e);
+          }
+        }
+      } else {
+        parsed = {};
       }
+
+      const aiResponseText =
+        typeof parsed.Response === 'string' ? parsed.Response :
+        typeof parsed.message === 'string' ? parsed.message :
+        typeof parsed.error === 'string' ? parsed.error :
+        "Sorry, I didn't get a response from the server.";
 
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: botResponse,
+        text: aiResponseText || "Sorry, I didn't get a response from the server.",
         sender: 'bot',
         timestamp: new Date(),
       };
@@ -80,7 +92,7 @@ const ChatBot = () => {
       console.error('Error sending message:', error);
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: "Sorry, I'm having trouble connecting right now. Please try again later! 🔧",
+        text: "Eeek! I'm having trouble connecting right now. Please try again later! 🔧",
         sender: 'bot',
         timestamp: new Date(),
       };
