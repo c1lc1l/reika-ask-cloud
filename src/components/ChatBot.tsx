@@ -138,7 +138,7 @@ const ChatBot = () => {
                 REIKA THE ORCA
               </h1>
               <img 
-                src="/lovable-uploads/ee65b2f7-ce00-46ca-9e95-9182b72dbb49.png" 
+                src="/roundlogo.png" 
                 alt="AWS Cloud Club PCU Cavite" 
                 className="w-14 h-14 object-contain"
               />
