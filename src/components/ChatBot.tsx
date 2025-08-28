@@ -121,29 +121,29 @@ const ChatBot = () => {
       </div>
 
       {/* Compact Chat Container */}
-      <div className="w-full max-w-4xl h-[80vh] flex flex-col chat-glass rounded-3xl overflow-hidden relative z-10">
+      <div className="w-full max-w-4xl h-[80vh] sm:h-[80vh] md:h-[80vh] flex flex-col chat-glass rounded-3xl overflow-hidden relative z-10">
         {/* Header */}
-        <header className="backdrop-blur-glass border-b border-border/20 px-6 py-6 flex-shrink-0 premium-glow chat-header">
+        <header className="backdrop-blur-glass border-b border-border/20 px-4 sm:px-6 py-4 sm:py-6 flex-shrink-0 premium-glow chat-header">
           <div className="text-center">
-            <div className="text-xs font-bold text-header-contrast tracking-wider uppercase mb-3 animate-pulse">
+            <div className="text-[0.65rem] sm:text-xs font-bold text-header-contrast tracking-wider uppercase mb-2 sm:mb-3 animate-pulse">
               ☁️ AWS Cloud Club PCU Cavite ☁️
             </div>
-            <div className="flex items-center justify-center gap-4 mb-3">
+            <div className="flex items-center justify-center gap-2 sm:gap-4 mb-2 sm:mb-3">
               <img 
                 src="/whitelogoaws.png" 
                 alt="AWS Cloud Club PCU Cavite" 
-                className="w-16 h-16 object-contain"
+                className="w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14"
               />
-              <h1 className="text-4xl md:text-5xl font-display font-black text-header-contrast text-3d-enhanced tracking-wide">
+              <h1 className="text-xl sm:text-3xl md:text-5xl font-black text-header-contrast text-3d-enhanced tracking-wide">
                 REIKA THE ORCA
               </h1>
               <img 
                 src="/roundlogo.png" 
                 alt="AWS Cloud Club PCU Cavite" 
-                className="w-14 h-14 object-contain"
+                className="w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14"
               />
             </div>
-            <p className="text-sm text-header-contrast font-semibold tracking-wide opacity-90">
+            <p className="text-xs sm:text-sm text-header-contrast font-semibold tracking-wide opacity-90">
               It's Alwaaaaays Day One!! Eeeeek! Eeek!
             </p>
           </div>
@@ -248,7 +248,7 @@ const ChatBot = () => {
           </div>
           
           <div className="text-center mt-4">
-            <p className="text-xs text-header-contrast opacity-75 font-semibold tracking-wide">
+            <p className="text-[11px] sm:text-xs leading-tight text-header-contrast opacity-75 font-semibold tracking-wide">
               🐋 Powered by Reika the Orca | © 2025 AWS Cloud Club - PCU Cavite
             </p>
           </div>

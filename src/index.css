@@ -610,6 +610,24 @@ All colors MUST be HSL.
   .chat-scrollbar::-webkit-scrollbar-corner {
     background: hsl(var(--background) / 0.1);
   }
+
+  @media (max-width: 640px) {
+    .message-bubble {
+      padding: 0.5rem 0.75rem !important;
+      font-size: 0.875rem !important; /* text-sm */
+    }
+  }
+    @media (max-width: 640px) {
+    .cloud-input {
+      padding: 0.4rem 0.6rem !important;
+      font-size: 0.875rem !important;
+      border-radius: 20px !important;
+    }
+    .send-button {
+      padding: 0.4rem 0.75rem !important;
+      font-size: 0.875rem !important;
+    }
+  }
 }
 
 @keyframes message-fade-in {
