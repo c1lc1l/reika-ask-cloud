@@ -72,27 +72,6 @@ const response = await fetch('https://your-api-gateway-url.amazonaws.com/stage/c
 
 2. Push to the `main` branch to trigger automatic deployment
 
-## 🎨 Customization
-
-### Brand Colors
-The app uses your provided color palette defined in `src/index.css`:
-
-- **Navy**: `#232f3e` (Primary)
-- **Coral**: `#f37952` (Accent)
-- **Light Green**: `#ecf7bb` (Success)
-- **Orange**: `#f9b66b` (Warning)
-- **Teal**: `#4f888e` & `#629999` (Secondary)
-- **Purple/Gray**: `#2a2836` & `#282d3a` (Dark variants)
-
-### Font
-The app uses **Open Sans** as specified. The font is loaded from Google Fonts in `index.html`.
-
-### Avatar/Logo
-To replace Reika's placeholder avatar:
-
-1. Add your custom avatar image to `public/`
-2. Update the Avatar component in `src/components/ChatBot.tsx`
-
 ## 📁 Project Structure
 
 ```
